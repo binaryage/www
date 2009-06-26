@@ -14,9 +14,10 @@ a web-based mashup builder (in early alpha)
 </div>
 
 <div class="products">
-<div class="product"><a href="http://firepython.binaryage.com"><img src="http://firepython.binaryage.com/images/logo.png"/></a></div>
-<div class="product"><a href="http://firerainbow.binaryage.com"><img src="http://firerainbow.binaryage.com/images/logo.png"/></a></div>
-<div class="product"><a href="http://visor.binaryage.com"><img src="http://visor.binaryage.com/images/logo.png"/></a></div>
-<div class="product"><a href="http://xrefresh.binaryage.com"><img src="http://xrefresh.binaryage.com/images/logo.png"/></a></div>
-<div class="product"><a href="http://drydrop.binaryage.com"><img src="http://drydrop.binaryage.com/images/logo.png"/></a></div>
+    <div class="product"><a href="http://visor.binaryage.com"><img src="http://visor.binaryage.com/images/logo.png"/></a></div>
+    <div class="product"><a href="http://firerainbow.binaryage.com"><img src="http://firerainbow.binaryage.com/images/logo.png"/></a></div>
+    <div class="product"><a href="http://firequery.binaryage.com"><img src="http://firequery.binaryage.com/shared/img/firequery-logo.png"/></a></div>
+    <div class="product"><a href="http://xrefresh.binaryage.com"><img src="http://xrefresh.binaryage.com/images/logo.png"/></a></div>
+    <div class="product"><a href="http://firepython.binaryage.com"><img src="http://firepython.binaryage.com/images/logo.png"/></a></div>
+    <div class="product"><a href="http://drydrop.binaryage.com"><img src="http://drydrop.binaryage.com/images/logo.png"/></a></div>
 </div>
