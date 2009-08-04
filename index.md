@@ -1,5 +1,5 @@
 ---
-title: BinaryAge
+title: BinaryAge - tools for developers
 layout: default
 ---
 
