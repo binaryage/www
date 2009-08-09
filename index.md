@@ -80,6 +80,21 @@ layout: default
 			</div>
 			<a class="product-link" href="http://firepython.binaryage.com">firepython.binaryage.com</a>
 		</div>
+		<div class="product">
+			<div class="product-logo">
+				<div class="logo">
+				  	<img src="/shared/img/drydrop-icon.png" width="32" height="32"/>
+					<h1>DryDrop</h1>
+					<h2>deploy GAE sites by pushing to GitHub</h2>
+				</div>
+			</div>
+			<div class="product-image">
+				<div class="main-screenshot">
+					<img src="/shared/img/drydrop-mainshot.png">
+				</div>
+			</div>
+			<a class="product-link" href="http://drydrop.binaryage.com">drydrop.binaryage.com</a>
+		</div>
 	</div>
 </div>
 
