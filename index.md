@@ -95,6 +95,21 @@ layout: default
 			</div>
 			<a class="product-link" href="http://drydrop.binaryage.com">drydrop.binaryage.com</a>
 		</div>
+		<div class="product">
+			<div class="product-logo">
+				<div class="logo">
+				  	<img src="/shared/img/firelogger4php-icon.png" width="32" height="32"/>
+					<h1>FireLogger for PHP</h1>
+					<h2>a sexy PHP logger console integrated into Firebug</h2>
+				</div>
+			</div>
+			<div class="product-image">
+				<div class="main-screenshot">
+					<img src="/shared/img/firelogger4php-mainshot.png">
+				</div>
+			</div>
+			<a class="product-link" href="http://firelogger4php.binaryage.com">firelogger4php.binaryage.com</a>
+		</div>
 	</div>
 </div>
 
