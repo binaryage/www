@@ -8,21 +8,6 @@ layout: default
 		<div class="product">
 			<div class="product-logo">
 				<div class="logo">
-				  	<img src="/shared/img/visor-icon.png" width="32" height="32"/>
-					<h1>Visor for OSX</h1>
-					<h2>a system-wide terminal accessible via a hot-key</h2>
-				</div>
-			</div>
-			<div class="product-image">
-				<div class="main-screenshot">
-					<img src="/shared/img/visor-mainshot.png">
-				</div>
-			</div>
-			<a class="product-link" href="http://visor.binaryage.com">visor.binaryage.com</a>
-		</div>
-		<div class="product">
-			<div class="product-logo">
-				<div class="logo">
 				  	<img src="/shared/img/firerainbow-icon.png" width="32" height="32"/>
 					<h1>FireRainbow</h1>
 					<h2>brings javascript syntax highlighting to Firebug</h2>
@@ -34,6 +19,21 @@ layout: default
 				</div>
 			</div>
 			<a class="product-link" href="http://firerainbow.binaryage.com">firerainbow.binaryage.com</a>
+		</div>
+		<div class="product">
+			<div class="product-logo">
+				<div class="logo">
+				  	<img src="/shared/img/visor-icon.png" width="32" height="32"/>
+					<h1>Visor for OSX</h1>
+					<h2>a system-wide terminal accessible via a hot-key</h2>
+				</div>
+			</div>
+			<div class="product-image">
+				<div class="main-screenshot">
+					<img src="/shared/img/visor-mainshot.png">
+				</div>
+			</div>
+			<a class="product-link" href="http://visor.binaryage.com">visor.binaryage.com</a>
 		</div>
 		<div class="product">
 			<div class="product-logo">
