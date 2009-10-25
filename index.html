@@ -121,7 +121,7 @@ menu: products
 
 <script>
 $(function() {      
-    $(".product").bind("click", function() {
+    $(".product").add('.offer').bind("click", function() {
         document.location = $(this).find('.product-link').attr('href');
     }); 
 });
