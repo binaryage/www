@@ -157,8 +157,19 @@ $.fn.autohash = function () {
   };
 
   $.relatizeDate = function(element) {
-    return $.relatizeDate.timeAgoInWords( new Date($(element).text()) );
-  };
+        var date = new Date( $(element).text() );
+
+        if (isNaN(date.getTime()))
+            date = new Date( $(element).attr("title") );
+
+        if (isNaN(date.getTime()))
+            date = new Date(parseInt( $(element).attr("title") ));
+            
+        if (isNaN(date.getTime()))
+            return $(element).text();
+        else 
+            return $.relatizeDate.timeAgoInWords(date);  
+    };
 
   // shortcut
   $r = $.relatizeDate;
