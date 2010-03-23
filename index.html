@@ -1,137 +1,206 @@
 ---
-title: BinaryAge - tools for developers
 layout: default
 menu: products
 satisfaction: 1
-styles:
-- /shared/css/tweet
+products: [{
+    title: "TotalFinder",
+    url: "http://totalfinder.binaryage.com",
+    description: "is native Finder with tabs<br>and more!",
+    features: [
+        "Tabs like in Google Chrome",
+        "Dual panels mode",
+        "Visor window available system-wide on a hot-key",
+        "Keeps your Mac clean by redirecting .DS_Store files"
+    ]
+},
+{
+    title: "Visor",
+    url: "http://visor.binaryage.com",
+    description: "is system-wide terminal<br>accessible via a hot-key.",
+    features: [
+        "Terminal window available system-wide on a hot-key",
+        "Nice Terminal colors out of the box",
+        "Copy to clipboard on selection"
+    ]
+},
+{
+    title: "FireQuery",
+    url: "http://firequery.binaryage.com",
+    description: "is Firebug extension<br>for jQuery development.",
+    features: [
+        "Attached jQuery datas are inlined in DOM Pane",
+        "jQuery objects in Firebug Console and DOM Panel",
+        "Elements in jQuery collections are highlighted on hover",
+        "jQuerify enables you to inject jQuery into any web page",
+        "jQuery Lint support"
+    ]
+},
+{
+    title: "FireRainbow",
+    url: "http://firerainbow.binaryage.com",
+    description: "brings javascript<br>syntax highlighting to Firebug.",
+    features: [
+        "Highlights Javascript, HTML and CSS",
+        "Color theme can be modified using Firebug's CSS panel",
+        "Highlighting is applied incrementally (good performance)",
+        "Color themes available on GitHub"
+    ]
+},
+{
+    title: "FireLogger",
+    url: "http://firelogger.binaryage.com",
+    description: "is a sexy logger console<br>integrated into Firebug.",
+    features: [
+        "Rich-text logging (drill down object properties)",
+        "Exceptions and backtrace visualization",
+        "Profiling graphs",
+        "Open in Text Editor integration",
+        "Password protection for live sites"
+    ]
+},
+{
+    title: "XRefresh",
+    url: "http://xrefresh.binaryage.com",
+    description: "will refresh your browser<br>on a file change.",
+    features: [
+        "Monitors multiple project folders",
+        "Performs refresh on file change",
+        "Soft Refresh for CSS and Javascript",
+        "You may specify exclude filters"
+    ]
+},
+{
+    title: "DryDrop",
+    url: "http://drydrop.binaryage.com",
+    description: "updates Google App Engine site<br>after pushing to GitHub.",
+    features: [
+        "App Engine is robust and free*",
+        "No Python knowledge needed, just Git",
+        "Set it up and forget"
+    ]
+}]
 ---
 
-<div class="relative">
-    <div class="master-separator">
-        <span class="separator-wrapper"><span class="separator-label">Products and Services</span></span>
-    </div>
-    <div id="offers">
-        <div class="offer">
-            <div class="offer-logo">
-                <div class="logo">
-                    <img src="/shared/img/totalfinder-icon.png" width="32" height="32"/>
-                    <div class="offer-image">
-                        <div class="main-screenshot">
-                            <img src="/shared/img/totalfinder-preview.png">
+<div id="main-gallery">
+    <div class="container">
+        <div id="gallery">
+            <div id="scroll">
+                <div id="tools">
+                    {% for product in page.products %}
+                    <div class="tool">
+                        <div class="span-12">
+                            <div class="demos">
+                                <div class="gallery-icon-highlight"></div>
+                                <img class="product-icon" src="/shared/img/icons/{{product.title|downcase}}-64.png">
+                                <div class="product-tagline"><a href="{{product.url}}"><strong>{{product.title}}</strong></a> {{product.description}}</div>
+                                <ul class="product-features">
+                                {% for feature in product.features %}
+                                    <li>{{feature}}</li>
+                                {% endfor %}
+                                </ul>
+                                <div class="gallery-more-button-highlight"></div>
+                                <a class="gallery-more-button" href="{{product.url}}">
+                                    <img class="gallery-more-button-icon" src="/shared/img/more-button-home.png">
+                                    <div class="gallery-more-button-title">{{product.title|downcase}} page</div>
+                                </a>
+                            </div>        
                         </div>
-                    </div>
-                    <h1>TotalFinder</h1>
-                    <h2>Finder.app enhancements<br>for Mac power users</h2>
-                    <p>Remember Norton Commander?</p>
-                </div>
-            </div>
-            <a class="product-link" href="http://totalfinder.binaryage.com">totalfinder.binaryage.com</a>
-        </div>
-        <div class="offer">
-            <div class="offer-logo">
-                <div class="logo">
-                    <img src="/images/hashpage-icon.png" width="32" height="32"/>
-                    <div class="offer-image">
-                        <div class="main-screenshot">
-                            <img src="/images/hashpage-preview.png">
+                        <div class="details span-12 last">
+                            <a href="{{product.url}}">
+                                <img title="Visit TotalFinder homepage" class="mainshot" src="/shared/img/{{product.title|downcase}}-mainshot.png">
+                            </a>
                         </div>
+                        <div class="gallery-separator"></div>
                     </div>
-                    <h1>HashPage</h1>
-                    <h2>a web-based mashup builder and social homepage creator</h2>
-                    <p>Want FriendFeed-based homepage?</p>
+                    {% endfor %}
+                </div>
+                <div class="clear"></div>
+                <div id="thumbs">
+                    <div class="navi">
+                        {% for product in page.products %}
+                        <div id="t{{forloop.index}}" class="tab" href="#{{product.title|downcase}}">
+                            <div class="thumb-box" class="thumb-{{product.title|downcase}}">
+                                <div class="thumb-center-helper">
+                                    <img class="thumb-icon-active tab-icon-{{product.title|downcase}}" src="/shared/img/icons/{{product.title|downcase}}-64.png"/>
+                                    <img class="thumb-icon tab-icon-{{product.title|downcase}}" src="/shared/img/icons/{{product.title|downcase}}-64gs.png"/>
+                                    <div class="thumb-title">{{product.title}}</div>
+                                    <div class="clear"></div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
                 </div>
             </div>
-            <a class="product-link" href="http://hashpage.com">hashpage.com</a>
         </div>
-        <div class="offers-bottom-bar"></div>
     </div>
-    <div class="master-separator">
-        <span class="separator-wrapper"><span class="separator-label">Open-Source Projects</span></span>
+</div>
+<div id="main-diff">
+    <div class="container">
+        <div class="diffbox">
+            <div class="diff-paid">
+                &lt;- paid apps
+            </div>
+            <div class="diff-separator">
+            </div>
+            <div class="diff-free">
+                free apps -&gt;
+            </div>
+        </div>
     </div>
-    <div id="products">
-        <div class="product">
-            <div class="product-logo">
-                <div class="logo">
-                    <img src="/shared/img/firerainbow-icon.png" width="32" height="32"/>
-                    <h1>FireRainbow</h1>
-                    <h2>brings javascript syntax highlighting to Firebug</h2>
+</div>
+<div id="main-social">
+    <div class="container">
+        <div id="social">
+            <div class="twitterbox span-12">
+                <div id="tweets-scrollable">
+                    <ol id="tweets" class="statuses">
+                    </ol>
                 </div>
             </div>
-            <a class="product-link" href="http://firerainbow.binaryage.com">firerainbow.binaryage.com</a>
-        </div>
-        <div class="product">
-            <div class="product-logo">
-                <div class="logo">
-                    <img src="/shared/img/firequery-icon.png" width="32" height="32"/>
-                    <h1>FireQuery</h1>
-                    <h2>a Firebug extension for jQuery development</h2>
+            <div class="satisfactionbox span-7">
+                <a class="block" href="http://getsatisfaction.com/binaryage"><img class="satisfaction" src="/shared/img/icon-satisfaction.png" width="211" height="70" title="Get Support and Satisfaction"></a>
+            </div>
+            <div class="sharebox span-5 last">
+                <div class="social-icons">
+                    <a href="http://feeds.feedburner.com/binaryage-blog"><div class="social-icon social-rss" title="RSS Feed for the Blog from BinaryAge"></div></a>
+                    <a href="http://twitter.com/binaryage"><div class="social-icon social-twitter" title="Follow BinaryAge on Twitter"></div></a>
+                    <a href="http://facebook.com/binaryage"><div class="social-icon social-facebook" title="Become a fan of BinaryAge on Facebook"></div></a>
+                    <a href="http://delicious.com/save" onclick="window.open('http://delicious.com/save?v=5&noui&jump=close&url='+encodeURIComponent('http://binaryage.com')+'&title='+encodeURIComponent(document.title), 'delicious','toolbar=no,width=550,height=550'); return false;"><div class="social-icon social-delicious" title="Bookmark BinaryAge on Delicious"></div></a>
                 </div>
             </div>
-            <a class="product-link" href="http://firequery.binaryage.com">firequery.binaryage.com</a>
-        </div>
-        <div class="product">
-            <div class="product-logo">
-                <div class="logo">
-                    <img src="/shared/img/firepython-icon.png" width="32" height="32"/>
-                    <h1>FireLogger</h1>
-                    <h2>a sexy logger console integrated into Firebug</h2>
-                </div>
-            </div>
-            <a class="product-link" href="http://firelogger.binaryage.com">firelogger.binaryage.com</a>
-        </div>
-        <div class="product">
-            <div class="product-logo">
-                <div class="logo">
-                    <img src="/shared/img/xrefresh-icon.png" width="32" height="32"/>
-                    <h1>XRefresh</h1>
-                    <h2>browser refresh automation for web developers</h2>
-                </div>
-            </div>
-            <a class="product-link" href="http://xrefresh.binaryage.com">xrefresh.binaryage.com</a>
-        </div>
-        <div class="product">
-            <div class="product-logo">
-                <div class="logo">
-                    <img src="/shared/img/visor-icon.png" width="32" height="32"/>
-                    <h1>Visor for OSX</h1>
-                    <h2>a system-wide terminal accessible via a hot-key</h2>
-                </div>
-            </div>
-            <a class="product-link" href="http://visor.binaryage.com">visor.binaryage.com</a>
-        </div>
-        <div class="product">
-            <div class="product-logo">
-                <div class="logo">
-                    <img src="/shared/img/drydrop-icon.png" width="32" height="32"/>
-                    <h1>DryDrop</h1>
-                    <h2>deploy App Engine sites by simply pushing to GitHub</h2>
-                </div>
-            </div>
-            <a class="product-link" href="http://drydrop.binaryage.com">drydrop.binaryage.com</a>
-        </div>
-        <div class="products-bottom-bar"></div>
-    </div>
-    <div class="master-separator">
-        <span class="separator-wrapper"><span class="separator-label">Voice of the crowd</span></span>
-    </div>
-    <div id="tweets" class="tweet">
-        <div class="loading">
-            <img src="/shared/img/flower-loader.gif"> Loading tweets ...
-        </div>
-        <div class="populated" style="display:none">
-            <div id="tweets-col-1" class="col"></div>
-            <div id="tweets-col-2" class="col"></div>
-            <div class="clear"></div>
-            <a href="http://twitter.com/binaryage/favorites">Want to hear more!</a>
         </div>
     </div>
 </div>
 
-<div class="clear"></div>
+<script>
+Cufon.replace('.thumb-title');
+Cufon.replace('.gallery-more-button-title');
+
+// initialize scrollable and return the programming API
+var ignoreNextHashChange;
+$("#scroll").scrollable({
+    onSeek: function(instance, index) {
+        ignoreNextHashChange = true;
+        location.hash = $('.tab').eq(index).attr('href');
+    },
+    keyboard: 'static',
+    items: '#tools',
+    size: 1,
+    clickable: false
+}).navigator();
+
+$(window).bind('hashchange', function(){
+    if (ignoreNextHashChange) {
+        ignoreNextHashChange = false;
+        return;
+    }
+    $('.tab[href='+location.hash+']').trigger('click');
+});
+
+</script>
 
 <script>
-
 $.fn.autolink = function () {
     return $(this).each(function() {
         var el = $(this);
@@ -254,16 +323,18 @@ $.fn.autohash = function () {
   });
 })(jQuery);
 
+function prepareTweetLoader(msg) {
+    return [
+        '<li class="hentry status" id="tweet-loader">',
+        '<span class="thumb vcard author"><img width="31" height="31" src="/shared/img/twitter-loader.gif"></span>',
+        '<span class="status-body"><span class="tweet-msg">'+msg+'</span><a class="more-praise" target="_blank" href="http://twitter.com/binaryage/favorites">show all recent</a></span>',
+        '</li>'
+    ].join('');
+}
+
 $.fn.tweet = function(options) {
-    return this.each(function() {
-        var root = $(this);
-
-        var defaults = {
-            user: 'binaryage',
-            count: 5
-        };
-        var params = $.extend(defaults, options);
-
+    
+    var generator = function(root, params) {
         var itemTemplate = '\
             <li id="status_--id--" class="hentry status">\
                 <span class="thumb vcard author">\
@@ -277,16 +348,16 @@ $.fn.tweet = function(options) {
                         <a rel="bookmark" class="entry-date" href="http://twitter.com/--userscreenname--/status/--id--"><span class="published timestamp">--createdat--</span></a> \
                         <span>from --source--</span>\
                     </span>\
+                    <a class="more-praise" target="_blank" href="http://twitter.com/binaryage/favorites">show all recent</a>\
                 </span>\
             </li>';
-        
-        $.getJSON('http://twitter.com/favorites.json?id='+encodeURIComponent(params.user)+'&callback=?', function(data) {
-            var index = 0;
-            root.find('.col').each(function() {
-                var col = $(this);
-                var content = $('<ol class="statuses"></ol>');
-                var counter = params.count;
-                for (var i=index; i<data.length && counter>0; i++) {
+
+        $.getJSON('http://twitter.com/favorites.json?page='+params.page+'&id='+encodeURIComponent(params.user)+'&callback=?', function(data) {
+            if (!data.length) {
+                $('#tweet-loader .tweet-msg').html('Ha! no more tweets. Spread the word and <a href="twitter.com">write one</a>.');
+            } else {
+                root.children().slice(0, -1).remove();
+                for (var i=0; i<data.length; i++) {
                     var item = data[i];
 
                     var li = itemTemplate;
@@ -297,27 +368,55 @@ $.fn.tweet = function(options) {
                     li = li.replace(/--userscreenname--/g, item.user.screen_name);
                     li = li.replace(/--source--/g, item.source);
                     li = li.replace(/--createdat--/g, item.created_at);
-                    content.append($(li));
-                    
-                    counter--;
+                    root.append($(li));
                 }
-                index = params.count;
-                col.append(content);
-            });
-            root.find('.published').relatizeDate();
-            root.find('.entry-content').autolink().autohash();
-            root.find('.loading').hide();
-            root.find('.populated').show('slow');
+                root.find('.published').relatizeDate();
+                root.find('.entry-content').autolink().autohash();
+                $('#tweets').append(prepareTweetLoader('Loading even more tweets ...'));
+            
+                jQuery.fx.off = true;
+                params.scrollable.reload().begin();
+                jQuery.fx.off = false;
+            }
         });
+    }
+    
+    
+    return this.each(function() {
+        var root = $(this);
+
+        var defaults = {
+            user: 'binaryage',
+            count: 5
+        };
+        var params = $.extend(defaults, options);
+
+        params.scrollable = $("#tweets-scrollable").scrollable({ 
+            onSeek: function(instance, index) {
+                if (index == this.getItems().length-1) {
+                    params.page++;
+                    generator(root, params);
+                }
+            },
+            api:true,
+            vertical:true,
+            hoverClass: 'hover',
+            keyboard: false,
+            size: 1
+        });
+        params.autoscroll = $("#tweets-scrollable").autoscroll({ autoplay: true, interval: 5000, api:true });
+        params.page = 0;
+        generator(root, params);
     });
 };
 
-$(function() {      
-    $(".product").add('.offer').bind("click", function() {
-        document.location = $(this).find('.product-link').attr('href');
-    }); 
+$('#tweets').append(prepareTweetLoader('Waiting for page to fully load ...'));
+
+window.onload = function() {
+    $('#tweet-loader .tweet-msg').html('Asking Twitter for initial round of praise ...');
     $("#tweets").tweet({
         user: "binaryage"
     });
-});
+};
+
 </script>

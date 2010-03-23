@@ -1,188 +1,128 @@
 ---
-title: BinaryAge - tools for developers
 layout: default
 menu: about
 permalink: /about
+love: [{
+    icon: "wedo-web",
+    title: "Web Development",
+    info: "I started to play with the web back in the times when Netscape ruled the world. 
+           First I've created a serious javascript-heavy IE6 project way before the AJAX was discovered. 
+           Today I'm trying to go cross-browser with jQuery and various quality javascript frameworks. 
+           I'm a big believer in the future of the web and a Douglas Crockford's fanboy. 
+           My dream is to build a <a href=\"http://hashpage.com\">browser-centric IDE</a> one day."
+},
+{
+    icon: "wedo-mac",
+    title: "Mac Development",
+    info: "I like Objective-C and Cocoa but they are a little bit verbose. 
+           That is why I'm so excited about MacRuby. These days I do also
+           iPhone development where I prefer web based UI (PhoneGap) with
+           underlying Objective-C services. I'm also very interested 
+           in SIMBL hacking and low-level OSX internals. This is exactly the skill set 
+           needed for improving system apps like Terminal or Finder."
+},
+{
+    icon: "wedo-be",
+    title: "Browser Extensions",
+    info: "Firebug is a great tool which revolutionized the way
+           we develop web applications today. I spent some time developing Firefox 
+           addons extending Firebug functionality. I'm on my personal mission of improving tools
+           for developers. Programming XUL is quite a pain but not that big pain as programming 
+           COM addons for IE. That is why I look forward to develop for Chrome which looks like an engineering masterpiece so far.",
+    last: "last"
+}]
 ---
 
-<style>
+<div id="main-about">
+    <div class="container background-highlight">
+        <div class="span-17 append-1 about-main">
+            <h1 class="about-title">Welcome to BinaryAge!</h1>
+            <div class="about-intro">
+                <p class="strong">How much time do you spend working on a computer? Each day? Monthly? How much every year?<br>And how do you feel about it?</p>
+                <p>I'm a developer and I spend a lot of time in front of the computer screen. And that is why I really care about my software tools. I'm quite picky and I have strong opinions how my tools should work.
+                Chances are you are similar to me. Chances are you have similar needs. Chances are you live in the binary age as well as me. Let's share ideas, code and better workflows!</p>
+            </div>
+            <h1 class="about-title">The story behind BinaryAge</h1>
+            <div class="about-story">
+                <p class="strong">I'm a former game programmer who morphed into a web developer. You can imagine it means pretty long way going from Windows, DirectX and proprietary C++ game engines to OSX, dynamic languages and open web technologies.</p>
+                <p>I still care about both worlds but I want to work on projects in which my individual contribution makes visible difference. 
+                    That is why I left warm place in a <a href="http://www.2kczech.com">big software house</a> and started my own one-person indie business. It was not easy, but I strongly believe I can bring 
+                    more value by taking my own responsibility and my own ideas into life.</p>
+            </div>
+            <h1 class="about-title">Why open-source?</h1>
+            <div class="about-contribute">
+                <p class="strong">I've been using many free and open-source tools during my career. I want to thank those authors and even if I didn't always contribute directly by donating them money I really appreciate their work. This is sort of my pay-back.</p>
+                <p>I simply love the idea that something I've built primarily for myself and which helps me in my daily work 
+                    is directly useful to other people. It is fun, it is innovative and by working on open-source there is also a good chance 
+                    I could meet like-minded developers with opportunity to work with them on the next great thing. Still want to change the world!</p>
+            </div>
+        </div>
+        <div class="span-6 last about-side">
+            <div class="about-side-inner">
+                <div class="about-side-photo">
+                    <img src="/shared/img/about-photo.png" width="159" height="250">
+                </div>
+                <div class="about-contact">
+                    <h2 class="about-name">Antonin Hildebrand</h2>
+                </div>
+                <div class="about-email">
+                    <a href="mailto:antonin@binaryage.com">antonin@binaryage.com</a>
+                </div>
+                
+                <div class="about-linkedin">
+                    <a href="http://cz.linkedin.com/in/hildebrand" >
+                        <img src="http://www.linkedin.com/img/webpromo/btn_myprofile_160x33.png" width="122" height="25" border="0" alt="View Antonin Hildebrand's profile on LinkedIn">
+                    </a>
+                </div>
+                
+                <div class="about-github">
+                    <img height="16" src="https://secure.gravatar.com/avatar/79322c2ed80c2d722de8c9d0475198a0?s=20&amp;d=https%3A%2F%2Fgithub.com%2Fimages%2Fgravatars%2Fgravatar-20.png" width="16">
+                    <a href="http://github.com/darwin">Darwin on GitHub</a>
+                </div>
 
-h1 {
-    margin-top: 20px;
-    font-size: 28px;
-    font-weight: bold;
-    color: #999;
-}
-
-.about-main p {
-    font-size: 14px;
-    line-height: 16px;
-}
-
-.about-contribute p {
-    font-size: 14px;
-    line-height: 16px;
-    margin-left: 10px;
-}
-
-.about-intro {
-    margin-left: 10px;
-}
-
-.about-side-person {
-    line-height: 14px;
-}
-
-.about-side-person-avatar {
-    float: left;
-    border: 1px solid #ddd;
-    -moz-border-radius: 2px; 
-    -webkit-border-radius: 2px;
-    margin-right: 12px;
-    position: relative;
-    top: -2px;
-}
-
-.about-side-person-avatar img {
-    border: 1px solid #fff;
-    -moz-border-radius: 2px; 
-    -webkit-border-radius: 2px;
-    display: block;
-    width: 48px;
-    height: 48px;
-}
-
-.subscribe {
-    clear: both;
-    margin-top: 40px;
-}
-
-.join {
-    clear: both;
-    margin-top: 40px;
-}
-
-.about-side-person-name {
-    font-weight: bold;
-    font-size: 14px;
-    line-height: 16px;
-}
-.donation-row {
-    position: relative;
-    clear: both;
-}
-
-.donation-row img {
-    width: 16px;
-    height: 11px;
-    margin-bottom: 2px;
-    padding-left: 20px;
-    float: left;
-}
-
-.donation-bar {
-    height: 7px;
-    background-color: #3599FF;
-    position: absolute;
-    left: 45px;
-    top: 2px;
-    -moz-border-radius: 2px; 
-    -webkit-border-radius: 2px;
-}
-
-.about-graphs p {
-    margin-bottom: 10px;
-    margin-top: 20px;
-    padding-left: 10px;
-}
-
-.contrib-button {
-    margin-top: 30px;
-    clear: both;
-}
-
-.contrib-button form {
-    margin-left: 20px;
-    float: left;
-    margin-right: 10px;
-}
-
-.about-flags {
-    font-size: 10px;
-    color: #999;
-    float: right;
-    clear: both;
-}
-
-</style>
-
-<div class="span-18 about-main">
-    <h1>Welcome to Binary Age!</h1>
-    <div class="about-intro">
-        <p>How much time do you spend working on a computer? Daily? Monthly? How much every year?<br>And how do you feel about it?</p>
-        <p>Listen, I'm a programmer and I spend a lot of time in front of the computer screen.<br>And that is why I really care about my software tools. I'm quite picky and I have strong opinions.</p>
-        <p>I have been always looking for ways how to work smarter. How to make things better in the long run. It's about productivity. It's about fun. It's about having a good feeling about the way I work.</p>
-        <p>Chances are you are similar to me. Chances are you have the same needs. Chances are you live in the binary age as well as me. Let's share ideas, code and better workflows.</p>
-        <p>Join thousands of developers who use BinaryAge tools.</p>
-    </div>
-    <hr>
-    <h1>Contributions</h1>
-    <div class="about-contribute">
-        <p>Some of my friends don't understand why I'm doing this. Why I give something away for free. Why I'm not working on another client project instead and making *real money*.</p>
-        <p>First, I've been using many free and open-source tools during my career. I want to thank those authors and even if I didn't always contribute directly by donating them money I really appreciate their work. This is sort of my pay-back.</p>
-        <p>Second, I simply love the idea that something I've built primarily for myself and which helps me in my daily work is directly useful for other people working like me. Tweet!</p>
-        <p>Third, I hope my work will be recognized and I will possibly get opportunity to work on interesting projects and ideas in the future. Have a gig? Let's talk!</p>
-        <p>Anyway, if you want to contribute, I prefer patches on GitHub, but here is also paypal button. This is nothing I can make living of but I really appreciate your donations same as hearing "thank you".</p>
-    </div>
-    <hr>
-    <div class="about-graphs">
-        <p>I like charts, here is a list of countries and totals for donations so far:</p>
-        <div class="donation-row" title="United States"><img src="/shared/img/flags/us.png"><div class="donation-bar" style="width:103px"></div></div>
-        <div class="donation-row" title="Germany"><img src="/shared/img/flags/de.png"><div class="donation-bar" style="width:30px"></div></div>
-        <div class="donation-row" title="Italy"><img src="/shared/img/flags/it.png"><div class="donation-bar" style="width:20px"></div></div>
-        <div class="donation-row" title="Netherlands"><img src="/shared/img/flags/nl.png"><div class="donation-bar" style="width:20px"></div></div>
-        <div class="donation-row" title="Hungary"><img src="/shared/img/flags/hu.png"><div class="donation-bar" style="width:10px"></div></div>
-        <div class="donation-row" title="United Kingdom"><img src="/shared/img/flags/gb.png"><div class="donation-bar" style="width:5px"></div></div>
-        <div class="donation-row" title="Japan"><img src="/shared/img/flags/jp.png"><div class="donation-bar" style="width:5px"></div></div>
-        <div class="donation-row" title="France"><img src="/shared/img/flags/fr.png"><div class="donation-bar" style="width:5px"></div></div>
-        <div class="donation-row" title="Spain"><img src="/shared/img/flags/es.png"><div class="donation-bar" style="width:5px"></div></div>
-        
-        <div class="about-flags">flag icons by <a href="http://www.famfamfam.com/lab/icons/flags/">famfamfam.com</a></div>
-        <div class="contrib-button">
-            <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
-                <input type="hidden" name="cmd" value="_s-xclick">
-                <input type="hidden" name="hosted_button_id" value="10098216">
-                <input type="image" src="https://www.paypal.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal">
-                <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
-            </form>
-            <div>Thanks!</div>
+                <div class="about-blog">
+                    <a href="http://feeds.feedburner.com/binaryage-blog" rel="alternate" type="application/rss+xml"><img src="http://www.feedburner.com/fb/images/pub/feed-icon16x16.png"/>
+                    <a href="http://blog.binaryage.com">read my blog</a></a>
+                </div>
+                
+                <div class="subscribe">
+                    <div><a href="http://feeds.feedburner.com/binaryage-blog"><img src="http://feeds.feedburner.com/~fc/binaryage-blog?bg=dddddd&amp;fg=444444&amp;anim=0" height="26" width="88" style="border:0" alt="" /></a></div>
+                    <div id="TwitterCounter">
+                        <a target="_new" title="Follow @binaryage" href="http://twitter.com/binaryage">
+                            <img width="88" height="26" alt="@binaryage" style="border: medium none;" src="http://srv2.twittercounter.com/counter/ani/binaryage/444444/dddddd">
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
-<div class="span-6 last blog-side">
-    <div class="blog-side-inner">
-        <div class="blog-side-about">
-            Binary People
-        </div>
-        <div class="about-side-person">
-            <div class="about-side-person-avatar">
-                <img src="http://www.gravatar.com/avatar/79322c2ed80c2d722de8c9d0475198a0?s=48" title="Darwin">
+
+<div id="main-motto">
+    <div class="container">
+        <h1 id="motto">simply things I love to do</h1>
+    </div>
+</div>
+
+<div id="main-love">
+    <div class="container">
+        <div id="love">
+            {% for love in page.love %}
+            <div class="lovebox span-8 {{love.last}}">
+                <div class="span-2"><div class="wedo-icon {{love.icon}}"></div></div>
+                <div class="lovetext span-6 last">
+                    <div class="lovetitle">{{love.title}}</div>
+                    <div class="loveinfo">{{love.info}}</div>
+                </div>
             </div>
-            <div class="about-side-person-bio">
-                <div class="about-side-person-name"><a href="http://hildebrand.cz">Antonin Hildebrand</a></div>
-                <div class="about-side-person-handle"><a href="http://github.com/darwin">is <b>Darwin</b> on GitHub</a></div>
-                <div class="about-side-person-more"><a href="http://www.linkedin.com/in/hildebrand">and also on LinkedIn</a></div>
-            </div>
-        </div>
-        <div class="join">
-            I feel quite alone here. Working on cool stuff? <a href="mailto:antonin@hildebrand.cz">Join BinaryAge!</a>
-        </div>
-        <div class="subscribe">
-            <p><a href="http://feeds.feedburner.com/binaryage-blog" rel="alternate" type="application/rss+xml"><img src="http://www.feedburner.com/fb/images/pub/feed-icon16x16.png" alt="" style="vertical-align:middle;border:0"/></a>&nbsp;<a href="http://feeds.feedburner.com/binaryage-blog" rel="alternate" type="application/rss+xml">Subscribe to the blog</a></p>
-            <p><a href="http://feeds.feedburner.com/binaryage-blog"><img src="http://feeds.feedburner.com/~fc/binaryage-blog?bg=dddddd&amp;fg=444444&amp;anim=0" height="26" width="88" style="border:0" alt="" /></a></p>
-        </div>
-        <div class="back-to-archive">
-            <a href="http://blog.binaryage.com">Read more articles</a>
+            {% endfor %}
+            <div class="clear"></div>
         </div>
     </div>
 </div>
+
+<script>
+Cufon.replace('#motto');
+Cufon.replace('.about-title');
+Cufon.replace('.about-name');
+</script>
