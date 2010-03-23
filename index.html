@@ -405,7 +405,7 @@ $.fn.tweet = function(options) {
             size: 1
         });
         params.autoscroll = $("#tweets-scrollable").autoscroll({ autoplay: true, interval: 5000, api:true });
-        params.page = 0;
+        params.page = 1;
         generator(root, params);
     });
 };
