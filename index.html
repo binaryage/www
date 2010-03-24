@@ -354,7 +354,7 @@ $.fn.tweet = function(options) {
 
         $.getJSON('http://twitter.com/favorites.json?page='+params.page+'&id='+encodeURIComponent(params.user)+'&callback=?', function(data) {
             if (!data.length) {
-                $('#tweet-loader .tweet-msg').html('Ha! no more tweets. Spread the word and <a href="twitter.com">write one</a>.');
+                $('#tweet-loader .tweet-msg').html('No more tweets. Help us spread the word and <a href="http://twitter.com">write a nice one</a>.');
             } else {
                 root.children().slice(0, -1).remove();
                 for (var i=0; i<data.length; i++) {
