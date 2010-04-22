@@ -2,6 +2,16 @@
 layout: default
 menu: products
 satisfaction: 1
+fbsdk: 1
+ogmeta: {
+    site_name: "BinaryAge",
+    description: "BinaryAge brings you innovative applications and developer tools.",
+    email: "antonin@binaryage.com",
+    type: "company",
+    title: "BinaryAge",
+    url: "http://www.binaryage.com",
+    image: "http://www.binaryage.com/shared/img/icons/binaryage-badge-64.png"
+}
 products: [{
     title: "TotalFinder",
     url: "http://totalfinder.binaryage.com",
@@ -80,10 +90,39 @@ products: [{
     ]
 }]
 ---
-
 <div id="main-gallery">
-    <div class="container">
+    <div class="container background-highlight">
+        <div class="span-12">
+            <div class="facebook-like-wrapper">
+                <div class="twitter-button-wrapper">
+                    <a href="http://www.twitter.com/binaryage"><img width="61" height="23" src="http://twitter-badges.s3.amazonaws.com/twitter-b.png" title="Follow BinaryAge on Twitter" alt="BinaryAge on Twitter"/></a>
+                </div>
+                <fb:like href="http://www.binaryage.com" layout="standard" show_faces="true" width="400" action="like" font="arial" colorscheme="light"></fb:like>
+            </div>
+        </div>
+        <div class="twitterbox span-12 last">
+            <div id="tweets-scrollable">
+                <ol id="tweets" class="statuses">
+                </ol>
+            </div>
+        </div>
         <div id="gallery">
+            <div id="thumbs">
+                <div class="navi">
+                    {% for product in page.products %}
+                    <div id="t{{forloop.index}}" class="tab" href="#{{product.title|downcase}}">
+                        <div class="thumb-box" class="thumb-{{product.title|downcase}}">
+                            <div class="thumb-center-helper">
+                                <img class="thumb-icon-active tab-icon-{{product.title|downcase}}" src="/shared/img/icons/{{product.title|downcase}}-64.png"/>
+                                <img class="thumb-icon tab-icon-{{product.title|downcase}}" src="/shared/img/icons/{{product.title|downcase}}-64gs.png"/>
+                                <div class="thumb-title">{{product.title}}</div>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
             <div id="scroll">
                 <div id="tools">
                     {% for product in page.products %}
@@ -91,7 +130,7 @@ products: [{
                         <div class="span-12">
                             <div class="demos">
                                 <div class="gallery-icon-highlight"></div>
-                                <img class="product-icon" src="/shared/img/icons/{{product.title|downcase}}-64.png">
+                                <a href="{{product.url}}"><img class="product-icon" src="/shared/img/icons/{{product.title|downcase}}-64.png"></a>
                                 <div class="product-tagline"><a href="{{product.url}}"><strong>{{product.title}}</strong></a> {{product.description}}</div>
                                 <ul class="product-features">
                                 {% for feature in product.features %}
@@ -107,66 +146,11 @@ products: [{
                         </div>
                         <div class="details span-12 last">
                             <a href="{{product.url}}">
-                                <img title="Visit TotalFinder homepage" class="mainshot" src="/shared/img/{{product.title|downcase}}-mainshot.png">
+                                <img title="Visit {{product.title}} homepage" class="mainshot" src="/shared/img/{{product.title|downcase}}-mainshot.png">
                             </a>
                         </div>
-                        <div class="gallery-separator"></div>
                     </div>
                     {% endfor %}
-                </div>
-                <div class="clear"></div>
-                <div id="thumbs">
-                    <div class="navi">
-                        {% for product in page.products %}
-                        <div id="t{{forloop.index}}" class="tab" href="#{{product.title|downcase}}">
-                            <div class="thumb-box" class="thumb-{{product.title|downcase}}">
-                                <div class="thumb-center-helper">
-                                    <img class="thumb-icon-active tab-icon-{{product.title|downcase}}" src="/shared/img/icons/{{product.title|downcase}}-64.png"/>
-                                    <img class="thumb-icon tab-icon-{{product.title|downcase}}" src="/shared/img/icons/{{product.title|downcase}}-64gs.png"/>
-                                    <div class="thumb-title">{{product.title}}</div>
-                                    <div class="clear"></div>
-                                </div>
-                            </div>
-                        </div>
-                        {% endfor %}
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div id="main-diff">
-    <div class="container">
-        <div class="diffbox">
-            <div class="diff-paid">
-                &lt;- paid apps
-            </div>
-            <div class="diff-separator">
-            </div>
-            <div class="diff-free">
-                free apps -&gt;
-            </div>
-        </div>
-    </div>
-</div>
-<div id="main-social">
-    <div class="container">
-        <div id="social">
-            <div class="twitterbox span-12">
-                <div id="tweets-scrollable">
-                    <ol id="tweets" class="statuses">
-                    </ol>
-                </div>
-            </div>
-            <div class="satisfactionbox span-7">
-                <a class="block" href="http://getsatisfaction.com/binaryage"><img class="satisfaction" src="/shared/img/icon-satisfaction.png" width="211" height="70" title="Get Support and Satisfaction"></a>
-            </div>
-            <div class="sharebox span-5 last">
-                <div class="social-icons">
-                    <a href="http://feeds.feedburner.com/binaryage-blog"><div class="social-icon social-rss" title="RSS Feed for the Blog from BinaryAge"></div></a>
-                    <a href="http://twitter.com/binaryage"><div class="social-icon social-twitter" title="Follow BinaryAge on Twitter"></div></a>
-                    <a href="http://facebook.com/binaryage"><div class="social-icon social-facebook" title="Become a fan of BinaryAge on Facebook"></div></a>
-                    <a href="http://delicious.com/save" onclick="window.open('http://delicious.com/save?v=5&noui&jump=close&url='+encodeURIComponent('http://binaryage.com')+'&title='+encodeURIComponent(document.title), 'delicious','toolbar=no,width=550,height=550'); return false;"><div class="social-icon social-delicious" title="Bookmark BinaryAge on Delicious"></div></a>
                 </div>
             </div>
         </div>
@@ -354,7 +338,7 @@ $.fn.tweet = function(options) {
 
         $.getJSON('http://twitter.com/favorites.json?page='+params.page+'&id='+encodeURIComponent(params.user)+'&callback=?', function(data) {
             if (!data.length) {
-                $('#tweet-loader .tweet-msg').html('No more tweets. Help us spread the word and <a href="http://twitter.com">write a nice one</a>.');
+                $('#tweet-loader .tweet-msg').html('No more tweets!<br/><a href="http://twitter.com">What do you think about apps from BinaryAge?</a>');
             } else {
                 root.children().slice(0, -1).remove();
                 for (var i=0; i<data.length; i++) {
@@ -413,7 +397,7 @@ $.fn.tweet = function(options) {
 $('#tweets').append(prepareTweetLoader('Waiting for page to fully load ...'));
 
 window.onload = function() {
-    $('#tweet-loader .tweet-msg').html('Asking Twitter for initial round of praise ...');
+    $('#tweet-loader .tweet-msg').html('Asking Twitter for some shouts about BinaryAge ...');
     $("#tweets").tweet({
         user: "binaryage"
     });
