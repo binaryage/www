@@ -8,6 +8,7 @@ meta_description: In BinaryAge we create innovative mac applications and develop
 meta_image: /images/totalfinder-screenshot-tabs.png
 satisfaction: 1
 fbsdk: 1
+fblikefooter: 1
 ogmeta: {
     site_name: "BinaryAge website",
     description: "BinaryAge brings you innovative applications and developer tools.",
@@ -19,8 +20,9 @@ ogmeta: {
 }
 products: [{
     title: "TotalFinder",
+    type: "app paid",
     url: "http://totalfinder.binaryage.com",
-    description: "is native Finder with tabs<br>and more!",
+    description: "a Finder plugin which adds tabs,<br>keyboard shortcuts and more!",
     features: [
         "Tabs like in Google Chrome",
         "Dual panels mode",
@@ -30,8 +32,9 @@ products: [{
 },
 {
     title: "Visor",
+    type: "app dev free",
     url: "http://visor.binaryage.com",
-    description: "is system-wide terminal<br>accessible via a hot-key.",
+    description: "a system-wide terminal<br>accessible via a hot-key",
     features: [
         "Terminal window available system-wide on a hot-key",
         "Nice Terminal colors out of the box",
@@ -40,8 +43,9 @@ products: [{
 },
 {
     title: "FireQuery",
+    type: "dev fb free",
     url: "http://firequery.binaryage.com",
-    description: "is Firebug extension<br>for jQuery development.",
+    description: "a Firebug extension<br>for jQuery development",
     features: [
         "Attached jQuery datas are inlined in DOM Pane",
         "jQuery objects in Firebug Console and DOM Panel",
@@ -52,8 +56,9 @@ products: [{
 },
 {
     title: "FireRainbow",
+    type: "dev fb free",
     url: "http://firerainbow.binaryage.com",
-    description: "brings javascript<br>syntax highlighting to Firebug.",
+    description: "a Firebug extension<br>for javascript syntax highlighting",
     features: [
         "Highlights Javascript, HTML and CSS",
         "Color theme can be modified using Firebug's CSS panel",
@@ -63,8 +68,9 @@ products: [{
 },
 {
     title: "FireLogger",
+    type: "dev fb free",
     url: "http://firelogger.binaryage.com",
-    description: "is a sexy logger console<br>integrated into Firebug.",
+    description: "a Firebug extension<br>which adds a sexy logger console",
     features: [
         "Rich-text logging (drill down object properties)",
         "Exceptions and backtrace visualization",
@@ -75,8 +81,9 @@ products: [{
 },
 {
     title: "XRefresh",
+    type: "dev win fb free",
     url: "http://xrefresh.binaryage.com",
-    description: "will refresh your browser<br>on a file change.",
+    description: "a Firebug extension<br>for refresh-driven development",
     features: [
         "Monitors multiple project folders",
         "Performs refresh on file change",
@@ -86,8 +93,9 @@ products: [{
 },
 {
     title: "DryDrop",
+    type: "dev free",
     url: "http://drydrop.binaryage.com",
-    description: "updates Google App Engine site<br>after pushing to GitHub.",
+    description: "updates Google App Engine site<br>after pushing to GitHub",
     features: [
         "App Engine is robust and free*",
         "No Python knowledge needed, just Git",
@@ -95,317 +103,155 @@ products: [{
     ]
 }]
 ---
-<div id="main-gallery">
+
+<div id="main-offer">
     <div class="container background-highlight">
-        <div class="span-12">
-            <div class="facebook-like-wrapper">
-                <div class="twitter-button-wrapper">
-                    <a href="http://www.twitter.com/binaryage"><img width="61" height="23" src="http://twitter-badges.s3.amazonaws.com/twitter-b.png" title="Follow BinaryAge on Twitter" alt="BinaryAge on Twitter"/></a>
-                </div>
-                <fb:like href="http://www.binaryage.com" layout="standard" show_faces="true" width="400" action="like" font="arial" colorscheme="light"></fb:like>
-            </div>
+        <ul class="splitter">
+            <li><div class="splitter-title">Software</div>
+                <ul class="segment">
+                    <li class="segment-1 selected-1">
+                        <a data-value="app">for Mac Users</a>
+                    </li>
+                    <li class="segment-0">
+                        <a data-value="dev">for Web Developers</a>
+                    </li>
+                    <li class="segment-2">
+                        <a data-value="all">All</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="splitter-second"><div class="splitter-title">which is</div>
+                <ul class="segment">
+                    <li class="segment-1 selected-1">
+                        <a data-value="any">awesome</a>
+                    </li>
+                    <li class="segment-0">
+                        <a data-value="paid">paid</a>
+                    </li>
+                    <li class="segment-0">
+                        <a data-value="free">open source</a>
+                    </li>
+                    <li class="segment-2">
+                        <a data-value="fb">a Firebug plugin</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="splitter-third"><div class="splitter-title"> and made with passion</div>
+            </li>
+        </ul>
+        <div class="silly-choice"  style="display:none;">
+            <div></div>
         </div>
-        <div class="twitterbox span-12 last">
-            <div id="tweets-scrollable">
-                <ol id="tweets" class="statuses">
-                </ol>
-            </div>
+        <div id="content">
+            {% for product in page.products %}
+            {% if product.type contains "app" %}
+            <a class="qsproduct {{product.type}}" data-id="p{{forloop.index}}" href="{{product.url}}">
+                <img class="qsproduct-icon qsproduct-icon-{{product.title|downcase}}" src="/shared/img/icons/{{product.title|downcase}}-128.png" width="128" height="128" alt=" "/>
+                <div class="qsproduct-title">{{product.title}}</div>
+                <div class="qsproduct-desc">{{product.description}}</div>
+            </a>
+            {% endif %}
+            {% endfor %}
+            <div class="clear"></div>
         </div>
-        <div id="gallery">
-            <div id="thumbs">
-                <div class="navi">
-                    {% for product in page.products %}
-                    <div id="t{{forloop.index}}" class="tab" href="#{{product.title|downcase}}">
-                        <div class="thumb-box" class="thumb-{{product.title|downcase}}">
-                            <div class="thumb-center-helper">
-                                <img class="thumb-icon-active tab-icon-{{product.title|downcase}}" src="/shared/img/icons/{{product.title|downcase}}-64.png"/>
-                                <img class="thumb-icon tab-icon-{{product.title|downcase}}" src="/shared/img/icons/{{product.title|downcase}}-64gs.png"/>
-                                <div class="thumb-title">{{product.title}}</div>
-                                <div class="clear"></div>
-                            </div>
-                        </div>
-                    </div>
-                    {% endfor %}
-                </div>
-            </div>
-            <div id="scroll">
-                <div id="tools">
-                    {% for product in page.products %}
-                    <div class="tool">
-                        <div class="span-12">
-                            <div class="demos">
-                                <div class="gallery-icon-highlight"></div>
-                                <a href="{{product.url}}"><img class="product-icon" src="/shared/img/icons/{{product.title|downcase}}-64.png"></a>
-                                <div class="product-tagline"><a href="{{product.url}}"><strong>{{product.title}}</strong></a> {{product.description}}</div>
-                                <ul class="product-features">
-                                {% for feature in product.features %}
-                                    <li>{{feature}}</li>
-                                {% endfor %}
-                                </ul>
-                                <div class="gallery-more-button-highlight"></div>
-                                <a class="gallery-more-button" href="{{product.url}}">
-                                    <img class="gallery-more-button-icon" src="/shared/img/more-button-home.png">
-                                    <div class="gallery-more-button-title">{{product.title|downcase}} page</div>
-                                </a>
-                            </div>        
-                        </div>
-                        <div class="details span-12 last">
-                            <a href="{{product.url}}">
-                                <img title="Visit {{product.title}} homepage" class="mainshot" src="/shared/img/{{product.title|downcase}}-mainshot.png">
-                            </a>
-                        </div>
-                    </div>
-                    {% endfor %}
-                </div>
-            </div>
+        <div id="qsproducts" style="display:none;">
+            {% for product in page.products %}
+            <a class="qsproduct {{product.type}}" data-id="p{{forloop.index}}" href="{{product.url}}">
+                <img class="qsproduct-icon qsproduct-icon-{{product.title|downcase}}" src="/shared/img/icons/{{product.title|downcase}}-128.png" width="128" height="128" alt=" "/>
+                <div class="qsproduct-title">{{product.title}}</div>
+                <div class="qsproduct-desc">{{product.description}}</div>
+            </a>
+            {% endfor %}
         </div>
     </div>
 </div>
 
 <script>
-Cufon.replace('.thumb-title');
-Cufon.replace('.gallery-more-button-title');
-
-// initialize scrollable and return the programming API
-var ignoreNextHashChange;
-$("#scroll").scrollable({
-    onSeek: function(instance, index) {
-        ignoreNextHashChange = true;
-        location.hash = $('.tab').eq(index).attr('href');
-    },
-    keyboard: 'static',
-    items: '#tools',
-    size: 1,
-    clickable: false
-}).navigator();
-
-$(window).bind('hashchange', function(){
-    if (ignoreNextHashChange) {
-        ignoreNextHashChange = false;
-        return;
-    }
-    $('.tab[href='+location.hash+']').trigger('click');
-});
-
-</script>
-
-<script>
-$.fn.autolink = function () {
-    return $(this).each(function() {
-        var el = $(this);
-        var re = /((http|https|ftp):\/\/[\w?=&.\/-;#~%-]+(?![\w\s?&.\/;#~%"=-]*>))/g;
-        el.html(el.html().replace(re, '<a href="$1">$1</a>'));
-    });
-};
-
-$.fn.autohash = function () {
-    return $(this).each(function() {
-        var el = $(this);
-        var re = /#(\w+)/g;
-        el.html(el.html().replace(re, '<a href="http://twitter.com/search?q=%23$1">#$1</a>'));
-    });
-};
-
-// All credit goes to Rick Olson.
-(function($) {
-  $.fn.relatizeDate = function() {
-    return $(this).each(function() {
-      $(this).text( $.relatizeDate(this) );
-    });
-  };
-
-  $.relatizeDate = function(element) {
-        var date = new Date( $(element).text() );
-
-        if (isNaN(date.getTime()))
-            date = new Date( $(element).attr("title") );
-
-        if (isNaN(date.getTime()))
-            date = new Date(parseInt( $(element).attr("title") ));
-            
-        if (isNaN(date.getTime()))
-            return $(element).text();
-        else 
-            return $.relatizeDate.timeAgoInWords(date);  
+$(function() {
+    var read_button = function(class_names) {
+        var r = {
+            selected: false,
+            type: 0
+        };
+        for (var i = 0; i < class_names.length; i++) {
+            if (class_names[i].indexOf('selected-') == 0) {
+                r.selected = true;
+            }
+            if (class_names[i].indexOf('segment-') == 0) {
+                r.segment = class_names[i].split('-')[1];
+            }
+        };
+        return r;
     };
 
-  // shortcut
-  $r = $.relatizeDate;
+    var determineSelected = function($buttons) {
+        var $selected = $buttons.parent().filter('[class*="selected-"]');
+        return $selected.find('a').attr('data-value');
+    };
 
-  $.extend($.relatizeDate, {
-    shortDays: [ 'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat' ],
-    days: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
-    shortMonths: [ 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec' ],
-    months: [ 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December' ],
+    var $preferences = {
+        duration: 600,
+        easing: 'easeInOutQuad',
+        adjustHeight: 'auto'
+    };
 
-    /**
-     * Given a formatted string, replace the necessary items and return.
-     * Example: Time.now().strftime("%B %d, %Y") => February 11, 2008
-     * @param {String} format The formatted string used to format the results
-     */
-    strftime: function(date, format) {
-      var day = date.getDay(), month = date.getMonth();
-      var hours = date.getHours(), minutes = date.getMinutes();
+    var $list = $('#content');
+    var $data = $('#qsproducts');
+    var $controls = $('ul.splitter ul');
 
-      var pad = function(num) { 
-        var string = num.toString(10);
-        return new Array((2 - string.length) + 1).join('0') + string;
-      };
+    var lastFingerpring = "...";
 
-      return format.replace(/\%([aAbBcdHImMpSwyY])/g, function(part) {
-        switch(part[1]) {
-          case 'a': return $r.shortDays[day]; break;
-          case 'A': return $r.days[day]; break;
-          case 'b': return $r.shortMonths[month]; break;
-          case 'B': return $r.months[month]; break;
-          case 'c': return date.toString(); break;
-          case 'd': return pad(date.getDate()); break;
-          case 'H': return pad(hours); break;
-          case 'I': return pad((hours + 12) % 12); break;
-          case 'm': return pad(month + 1); break;
-          case 'M': return pad(minutes); break;
-          case 'p': return hours > 12 ? 'PM' : 'AM'; break;
-          case 'S': return pad(date.getSeconds()); break;
-          case 'w': return day; break;
-          case 'y': return pad(date.getFullYear() % 100); break;
-          case 'Y': return date.getFullYear().toString(); break;
+    var fingerprint = function(jq) {
+        var print = "";
+        for (var i=0; i < jq.length; i++) {
+            var item = jq.eq(i);
+            print += item.attr('data-id');
         }
-      });
-    },
-  
-    timeAgoInWords: function(targetDate, includeTime) {
-      return $r.distanceOfTimeInWords(targetDate, new Date(), includeTime);
-    },
-  
-    /**
-     * Return the distance of time in words between two Date's
-     * Example: '5 days ago', 'about an hour ago'
-     * @param {Date} fromTime The start date to use in the calculation
-     * @param {Date} toTime The end date to use in the calculation
-     * @param {Boolean} Include the time in the output
-     */
-    distanceOfTimeInWords: function(fromTime, toTime, includeTime) {
-      var delta = parseInt((toTime.getTime() - fromTime.getTime()) / 1000, 10);
-      if (delta < 60) {
-          return 'less than a minute ago';
-      } else if (delta < 120) {
-          return 'about a minute ago';
-      } else if (delta < (45*60)) {
-          return (parseInt(delta / 60, 10)).toString() + ' minutes ago';
-      } else if (delta < (120*60)) {
-          return 'about an hour ago';
-      } else if (delta < (24*60*60)) {
-          return 'about ' + (parseInt(delta / 3600, 10)).toString() + ' hours ago';
-      } else if (delta < (48*60*60)) {
-          return '1 day ago';
-      } else {
-        var days = (parseInt(delta / 86400, 10)).toString();
-        if (days > 5) {
-          var fmt  = '%B %d, %Y';
-          if (includeTime) fmt += ' %I:%M %p';
-          return $r.strftime(fromTime, fmt);
-        } else {
-          return days + " days ago";
-        }
-      }
-    }
-  });
-})(jQuery);
+        return print;
+    };
 
-function prepareTweetLoader(msg) {
-    return [
-        '<li class="hentry status" id="tweet-loader">',
-        '<span class="thumb vcard author"><img width="31" height="31" src="/shared/img/twitter-loader.gif"></span>',
-        '<span class="status-body"><span class="tweet-msg">'+msg+'</span><a class="more-praise" target="_blank" href="http://twitter.com/binaryage/favorites">show all recent</a></span>',
-        '</li>'
-    ].join('');
-}
+    $controls.each(function(i) {
 
-$.fn.tweet = function(options) {
-    
-    var generator = function(root, params) {
-        var itemTemplate = '\
-            <li id="status_--id--" class="hentry status">\
-                <span class="thumb vcard author">\
-                    <a class="tweet-url profile-pic url" href="http://twitter.com/--userscreenname--">\
-                        <img width="48" height="48" src="--avatar--" class="photo fn" alt="--username--">\
-                    </a>\
-                </span>\
-                <span class="status-body">\
-                    <strong><a title="--username--" class="tweet-url screen-name" href="http://twitter.com/--userscreenname--">--userscreenname--</a></strong> \
-                    <span class="entry-content">--text--</span><span class="meta entry-meta">\
-                        <a rel="bookmark" class="entry-date" href="http://twitter.com/--userscreenname--/status/--id--"><span class="published timestamp">--createdat--</span></a> \
-                        <span>from --source--</span>\
-                    </span>\
-                    <a class="more-praise" target="_blank" href="http://twitter.com/binaryage/favorites">show all recent</a>\
-                </span>\
-            </li>';
+        var $control = $(this);
+        var $buttons = $control.find('a');
 
-        $.getJSON('http://twitter.com/favorites.json?page='+params.page+'&id='+encodeURIComponent(params.user)+'&callback=?', function(data) {
-            if (!data.length) {
-                $('#tweet-loader .tweet-msg').html('No more tweets!<br/><a href="http://twitter.com">What do you think about apps from BinaryAge?</a>');
-            } else {
-                root.children().slice(0, -1).remove();
-                for (var i=0; i<data.length; i++) {
-                    var item = data[i];
+        $buttons.bind('click', function(e) {
+            var $button = $(this);
+            var $button_container = $button.parent();
+            var button_properties = read_button($button_container.attr('class').split(' '));
+            var selected = button_properties.selected;
+            var button_segment = button_properties.segment;
 
-                    var li = itemTemplate;
-                    li = li.replace(/--id--/g, item.id);
-                    li = li.replace(/--text--/g, item.text);
-                    li = li.replace(/--avatar--/g, item.user.profile_image_url);
-                    li = li.replace(/--username--/g, item.user.name);
-                    li = li.replace(/--userscreenname--/g, item.user.screen_name);
-                    li = li.replace(/--source--/g, item.source);
-                    li = li.replace(/--createdat--/g, item.created_at);
-                    root.append($(li));
+            if (!selected) {
+                $buttons.parent().removeClass('selected-0').removeClass('selected-1').removeClass('selected-2');
+                $button_container.addClass('selected-' + button_segment);
+
+                var filter = determineSelected($controls.eq(0).find('a'));
+                var kind = determineSelected($controls.eq(1).find('a'));
+
+                var selector = "";
+                if (filter != 'all') {
+                    selector += "." + filter;
                 }
-                root.find('.published').relatizeDate();
-                root.find('.entry-content').autolink().autohash();
-                $('#tweets').append(prepareTweetLoader('Loading even more tweets ...'));
-            
-                jQuery.fx.off = true;
-                params.scrollable.reload().begin();
-                jQuery.fx.off = false;
+                if (kind != 'any') {
+                    selector += "." + kind;
+                }
+                $filtered_data = $data.find('.qsproduct' + selector);
+                if (fingerprint($filtered_data)!=lastFingerpring) { // just optimization
+                    if ($filtered_data.length==0) {
+                        $('.silly-choice').show();
+                    } else {
+                        $('.silly-choice').hide();
+                    }
+                    $list.quicksand($filtered_data, $preferences);
+                    lastFilteredData = fingerprint($filtered_data);
+                }
             }
+
+            e.preventDefault();
         });
-    }
-    
-    
-    return this.each(function() {
-        var root = $(this);
 
-        var defaults = {
-            user: 'binaryage',
-            count: 5
-        };
-        var params = $.extend(defaults, options);
-
-        params.scrollable = $("#tweets-scrollable").scrollable({ 
-            onSeek: function(instance, index) {
-                if (index == this.getItems().length-1) {
-                    params.page++;
-                    generator(root, params);
-                }
-            },
-            api:true,
-            vertical:true,
-            hoverClass: 'hover',
-            keyboard: false,
-            size: 1
-        });
-        params.autoscroll = $("#tweets-scrollable").autoscroll({ autoplay: true, interval: 5000, api:true });
-        params.page = 1;
-        generator(root, params);
     });
-};
-
-$('#tweets').append(prepareTweetLoader('Waiting for page to fully load ...'));
-
-window.onload = function() {
-    $('#tweet-loader .tweet-msg').html('Asking Twitter for some shouts about BinaryAge ...');
-    $("#tweets").tweet({
-        user: "binaryage"
-    });
-};
+});
 
 </script>
