@@ -3,35 +3,6 @@ layout: default
 title: About BinaryAge
 menu: about
 permalink: /about
-love: [{
-    icon: "wedo-web",
-    title: "Web Development",
-    info: "I started to play with the web back in the times when Netscape ruled the world. 
-           First I've created a serious javascript-heavy IE6 project way before before AJAX was discovered. 
-           Today I'm trying to go cross-browser with jQuery and various quality javascript frameworks. 
-           I'm a big believer in the future of the web and a Douglas Crockford's fanboy. 
-           My dream is to build a <a href=\"http://hashpage.com\">browser-centric IDE</a> one day."
-},
-{
-    icon: "wedo-mac",
-    title: "Mac Development",
-    info: "I like Objective-C and Cocoa but they are a little bit verbose. 
-           That is why I'm so excited about MacRuby. These days I do also
-           iPhone development where I prefer web based UI (PhoneGap) with
-           underlying Objective-C services. I'm also very interested 
-           in SIMBL hacking and low-level OSX internals. This is exactly the skill set 
-           needed for improving system apps like Terminal or Finder."
-},
-{
-    icon: "wedo-be",
-    title: "Browser Extensions",
-    info: "Firebug is a great tool which revolutionized the way
-           we develop web applications today. I spent some time developing Firefox addons by extending Firebug functionality.
-           I'm on a personal mission of improving tools
-           for developers. Programming XUL is quite a pain but not as big pain as programming 
-           COM addons for IE. That is why I look forward to developing for Chrome, which looks like an engineering masterpiece so far.",
-    last: "last"
-}]
 ---
 
 <div id="main-about">
@@ -92,34 +63,3 @@ love: [{
         </div>
     </div>
 </div>
-
-{% if false %}
-<div id="main-motto">
-    <div class="container">
-        <h1 id="motto">simply things I love to do</h1>
-    </div>
-</div>
-
-<div id="main-love">
-    <div class="container">
-        <div id="love">
-            {% for love in page.love %}
-            <div class="lovebox span-8 {{love.last}}">
-                <div class="span-2"><div class="wedo-icon {{love.icon}}"></div></div>
-                <div class="lovetext span-6 last">
-                    <div class="lovetitle">{{love.title}}</div>
-                    <div class="loveinfo">{{love.info}}</div>
-                </div>
-            </div>
-            {% endfor %}
-            <div class="clear"></div>
-        </div>
-    </div>
-</div>
-{% endif %}
-
-<script>
-Cufon.replace('#motto');
-// Cufon.replace('.about-title');
-Cufon.replace('.about-name');
-</script>
