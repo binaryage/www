@@ -20,7 +20,7 @@ ogmeta: {
 }
 products: [{
     title: "TotalFinder",
-    type: "app paid",
+    type: "app paid popular",
     url: "http://totalfinder.binaryage.com",
     description: "a Finder plugin which adds tabs,<br>keyboard shortcuts and more!",
     features: [
@@ -32,7 +32,7 @@ products: [{
 },
 {
     title: "Visor",
-    type: "app dev free",
+    type: "app dev free popular",
     url: "http://visor.binaryage.com",
     description: "a system-wide terminal<br>accessible via a hot-key",
     features: [
@@ -43,7 +43,7 @@ products: [{
 },
 {
     title: "FireQuery",
-    type: "dev fb free",
+    type: "dev fb free popular",
     url: "http://firequery.binaryage.com",
     description: "a Firebug extension<br>for jQuery development",
     features: [
@@ -104,26 +104,35 @@ products: [{
 }]
 ---
 
+<div id="qsproducts" style="display:none;">
+    {% for product in page.products %}
+    <a class="qsproduct {{product.type}}" data-id="p{{forloop.index}}" href="{{product.url}}">
+        <img class="qsproduct-icon qsproduct-icon-{{product.title|downcase}}" src="/shared/img/icons/{{product.title|downcase}}-128.png" width="128" height="128" alt=" "/>
+        <div class="qsproduct-title">{{product.title}}</div>
+        <div class="qsproduct-desc">{{product.description}}</div>
+    </a>
+    {% endfor %}
+</div>
 <div id="main-offer">
     <div class="container background-highlight">
         <ul class="splitter">
             <li><div class="splitter-title">Software</div>
                 <ul class="segment">
-                    <li class="segment-1 selected-1">
+                    <li class="segment-1">
                         <a data-value="app">for Mac Users</a>
                     </li>
                     <li class="segment-0">
                         <a data-value="dev">for Web Developers</a>
                     </li>
-                    <li class="segment-2">
-                        <a data-value="all">All</a>
+                    <li class="segment-2 selected-1">
+                        <a data-value="all">for all</a>
                     </li>
                 </ul>
             </li>
             <li class="splitter-second"><div class="splitter-title">which is</div>
                 <ul class="segment">
                     <li class="segment-1 selected-1">
-                        <a data-value="any">awesome</a>
+                        <a data-value="popular">popular</a>
                     </li>
                     <li class="segment-0">
                         <a data-value="paid">paid</a>
@@ -131,20 +140,27 @@ products: [{
                     <li class="segment-0">
                         <a data-value="free">open source</a>
                     </li>
-                    <li class="segment-2">
+                    <li class="segment-0">
                         <a data-value="fb">a Firebug plugin</a>
+                    </li>
+                    <li class="segment-2">
+                        <a data-value="any">anything</a>
                     </li>
                 </ul>
             </li>
-            <li class="splitter-third"><div class="splitter-title"> and made with passion</div>
-            </li>
         </ul>
-        <div class="silly-choice"  style="display:none;">
-            <div></div>
+        <div class="no-matches"  style="display:none;">
+            <div class="no-matches-arrow1"></div>
+            <div class="no-matches-arrow2"></div>
+            No matches, please try something else
+        </div>
+        <div class="intro-text" style="visibility:hidden">
+            <div class="intro-1">Hi, I'm an indie developer producing Mac Applications and Web Development tools</div>
+            <div class="intro-2">Here are my most popular apps&hellip;</div>
         </div>
         <div id="content">
             {% for product in page.products %}
-            {% if product.type contains "app" %}
+            {% if product.type contains "popular" %}
             <a class="qsproduct {{product.type}}" data-id="p{{forloop.index}}" href="{{product.url}}">
                 <img class="qsproduct-icon qsproduct-icon-{{product.title|downcase}}" src="/shared/img/icons/{{product.title|downcase}}-128.png" width="128" height="128" alt=" "/>
                 <div class="qsproduct-title">{{product.title}}</div>
@@ -154,19 +170,19 @@ products: [{
             {% endfor %}
             <div class="clear"></div>
         </div>
-        <div id="qsproducts" style="display:none;">
-            {% for product in page.products %}
-            <a class="qsproduct {{product.type}}" data-id="p{{forloop.index}}" href="{{product.url}}">
-                <img class="qsproduct-icon qsproduct-icon-{{product.title|downcase}}" src="/shared/img/icons/{{product.title|downcase}}-128.png" width="128" height="128" alt=" "/>
-                <div class="qsproduct-title">{{product.title}}</div>
-                <div class="qsproduct-desc">{{product.description}}</div>
-            </a>
-            {% endfor %}
+        <div class="want-more" style="visibility:hidden">
+            And that's not all. <a href="javascript:giveMore()">Want more?</a>
         </div>
     </div>
 </div>
 
 <script>
+function giveMore() {
+    $('.want-more').remove();
+    $('.intro-text').remove();
+    $('.splitter').addClass('activated');
+}
+ 
 $(function() {
     var read_button = function(class_names) {
         var r = {
@@ -239,9 +255,9 @@ $(function() {
                 $filtered_data = $data.find('.qsproduct' + selector);
                 if (fingerprint($filtered_data)!=lastFingerpring) { // just optimization
                     if ($filtered_data.length==0) {
-                        $('.silly-choice').show();
+                        $('.no-matches').show();
                     } else {
-                        $('.silly-choice').hide();
+                        $('.no-matches').hide();
                     }
                     $list.quicksand($filtered_data, $preferences);
                     lastFilteredData = fingerprint($filtered_data);
