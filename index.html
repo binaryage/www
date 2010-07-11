@@ -22,7 +22,7 @@ products: [{
     title: "TotalFinder",
     type: "app paid popular",
     url: "http://totalfinder.binaryage.com",
-    description: "a Finder plugin which adds tabs,<br>keyboard shortcuts and more!",
+    description: "a Finder plugin<br>provides tabs and more!",
     features: [
         "Tabs like in Google Chrome",
         "Dual panels mode",
@@ -114,7 +114,7 @@ products: [{
     {% endfor %}
 </div>
 <div id="main-offer">
-    <div class="container background-highlight">
+    <div class="container">
         <ul class="splitter">
             <li><div class="splitter-title">Software</div>
                 <ul class="segment">
@@ -125,7 +125,7 @@ products: [{
                         <a data-value="dev">for Web Developers</a>
                     </li>
                     <li class="segment-2 selected-1">
-                        <a data-value="all">for all</a>
+                        <a data-value="all">for anyone</a>
                     </li>
                 </ul>
             </li>
@@ -144,7 +144,7 @@ products: [{
                         <a data-value="fb">a Firebug plugin</a>
                     </li>
                     <li class="segment-2">
-                        <a data-value="any">anything</a>
+                        <a id="which-is-anything" data-value="any">anything</a>
                     </li>
                 </ul>
             </li>
@@ -156,7 +156,6 @@ products: [{
         </div>
         <div class="intro-text" style="visibility:hidden">
             <div class="intro-1">Hi, I'm an indie developer producing Mac Applications and Web Development tools</div>
-            <div class="intro-2">Here are my most popular apps&hellip;</div>
         </div>
         <div id="content">
             {% for product in page.products %}
@@ -179,8 +178,11 @@ products: [{
 <script>
 function giveMore() {
     $('.want-more').remove();
-    $('.intro-text').remove();
+    $('.intro-text').animate({opacity:0}, 400);
     $('.splitter').addClass('activated');
+    setTimeout(function() {
+        $('#which-is-anything').trigger('click');
+    }, 1000);
 }
  
 $(function() {
@@ -255,9 +257,9 @@ $(function() {
                 $filtered_data = $data.find('.qsproduct' + selector);
                 if (fingerprint($filtered_data)!=lastFingerpring) { // just optimization
                     if ($filtered_data.length==0) {
-                        $('.no-matches').show();
+                        $('.no-matches').fadeIn();
                     } else {
-                        $('.no-matches').hide();
+                        $('.no-matches').fadeOut();
                     }
                     $list.quicksand($filtered_data, $preferences);
                     lastFilteredData = fingerprint($filtered_data);
