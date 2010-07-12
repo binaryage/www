@@ -1,4 +1,2 @@
-server: true
-auto: true
 url: http://binaryage.com
 markdown: rdiscount
