@@ -77,6 +77,8 @@ task :store do
     patch(STORE_TEMPLATE_WORKING_DIR_WINDOW, [
         ["<!DOCTYPE html>", ""],
         ["<html ", "<html xmlns=\"http://www.w3.org/1999/xhtml\"\n      "],
+        [/<body(.*?)>/, "<body\\1><div id=\"page-store-template\">"],
+        ["</body>", "</div></body>"],
         [/<script(.*?)>/, "<script\\1>//<![CDATA["],
         [/<\/script>/, "//]]></script>"],
         [/<link(.*?)([\/]{0,1})>/, "<link\\1/>"],
