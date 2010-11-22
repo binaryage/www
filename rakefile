@@ -94,6 +94,8 @@ task :store do
     
     content = File.read(STORE_TEMPLATE_WORKING_DIR_WINDOW)
     content.gsub!(/<!-- SCRIPTS START -->(.*?)<!-- SCRIPTS END -->(.*?)<body(.*?)>/m, "\\2<body\\3>\\1")
+    content.gsub!(/src="\/\/cdn\.optimizely\.com/m, "src=\"https://cdn.optimizely.com") # FastSpring tries to be too smart during upload and removes non-resolvable urls with unknown.gif
+    content.gsub!(/src="http:/m, "src=\"https:")
     File.open(STORE_TEMPLATE_WORKING_DIR_WINDOW, "w") do |f|
       f << content
     end
