@@ -51,7 +51,7 @@ def patch(path, replacers)
     end
   end
   File.open(path, "w") do |f|
-    f << lines
+    f << lines.join
   end
 end
 
@@ -79,18 +79,24 @@ task :store do
         ["<html ", "<html xmlns=\"http://www.w3.org/1999/xhtml\"\n      "],
         [/<body(.*?)>/, "<body\\1><div id=\"page-store-template\">"],
         ["</body>", "</div></body>"],
-        [/<script(.*?)>/, "<script\\1>//<![CDATA["],
-        [/<\/script>/, "//]]></script>"],
+        [/<script(.*?)>/, "<script\\1>//<![CDATA[\n"],
+        [/<\/script>/, "\n//]]></script>"],
         [/<link(.*?)([\/]{0,1})>/, "<link\\1/>"],
         [/<img(.*?)([\/]{0,1})>/, "<img\\1/>"],
         [/<br>/, "<br/>"],
-        [/href="\//, "href=\""],
-        [/src="\//, "src=\""],
+        [/href="\/([^\/])/, "href=\"\\1"],
+        [/src="\/([^\/])/, "src=\"\\1"],
         ["&nbsp;", "&#160;"],
         ["&copy;", "&#169;"],
         ["##INSERT STORE CONTENT HERE##", "\n<!-- TemplateBeginEditable name=\"Content\" -->\n\n<!-- TemplateEndEditable -->"],
         ["</title>", "</title>\n<link title=\"main\" rel=\"stylesheet\" href=\"http://resource.fastspring.com/app/s/style/base.css\" media=\"screen,projection\" type=\"text/css\" />\n<link title=\"main\" rel=\"stylesheet\" href=\"http://resource.fastspring.com/app/store/style/base.css\" media=\"screen,projection\" type=\"text/css\" />"]
     ])
+    
+    content = File.read(STORE_TEMPLATE_WORKING_DIR_WINDOW)
+    content.gsub!(/<!-- SCRIPTS START -->(.*?)<!-- SCRIPTS END -->(.*?)<body(.*?)>/m, "\\2<body\\3>\\1")
+    File.open(STORE_TEMPLATE_WORKING_DIR_WINDOW, "w") do |f|
+      f << content
+    end
 
     # fix paths in CSS
     patch(STORE_TEMPLATE_WORKING_DIR_SHARED_CSS_SITE, [
