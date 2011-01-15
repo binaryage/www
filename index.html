@@ -2,9 +2,9 @@
 layout: default
 title: Mac applications and developer tools from BinaryAge
 menu: products
-meta_title: Mac applications and developer tools from BinaryAge
-meta_keywords: binaryage,antonin hildebrand,totalfinder,finder,visor,firequery,firelogger,firerainbow,xrefresh,drydrop,hashpage,productivity,mac,indie,software
-meta_description: At BinaryAge we create innovative mac applications and developer tools.
+meta_title: Mac applications and development tools from BinaryAge
+meta_keywords: binaryage,antonin hildebrand,totalfinder,total commander,finder,visor,firequery,firelogger,firerainbow,xrefresh,drydrop,hashpage,productivity,mac,indie,software
+meta_description: BinaryAge - the creator of innovative Mac applications and tools for developers.
 meta_image: /images/totalfinder-screenshot-tabs.png
 satisfaction: 1
 fbsdk: 1
@@ -108,6 +108,9 @@ products: [{
 <div id="qsproducts" style="display:none;">
     {% for product in page.products %}
     <a class="qsproduct {{product.type}}" data-id="p{{forloop.index}}" href="{{product.url}}">
+        {% if product.badge %}
+        <div class="qsproduct-badge">{{product.badge}}</div>
+        {% endif %}
         <img class="qsproduct-icon qsproduct-icon-{{product.title|downcase}}" src="/shared/img/icons/{{product.title|downcase}}-128.png" width="128" height="128" alt=" "/>
         <div class="qsproduct-title">{{product.title}}</div>
         <div class="qsproduct-desc">{{product.description}}</div>
@@ -142,7 +145,7 @@ products: [{
                         <a data-value="free">open source</a>
                     </li>
                     <li class="segment-0">
-                        <a data-value="fb">a Firebug plugin</a>
+                        <a data-value="fb">for Firebug</a>
                     </li>
                     <li class="segment-2">
                         <a id="which-is-anything" data-value="any">anything</a>
@@ -155,13 +158,21 @@ products: [{
             <div class="no-matches-arrow2"></div>
             No matches, please try something else
         </div>
-        <div class="intro-text" style="visibility:hidden">
-            <div class="intro-1">Hi, I'm an indie developer producing Mac Applications and Web Development tools</div>
+        <div class="intro-text" style="height: 40px">
+            <div class="intro-about"><a href="http://www.binaryage.com/about.html"><img src="http://www.gravatar.com/avatar/79322c2ed80c2d722de8c9d0475198a0?s=64" width="32" height="32" title="Antonin from BinaryAge" alt="Antonin from BinaryAge"></a></div>
+            <div class="intro-1" style="display:none">
+                Hi, I'm Antonin - an indie developer producing Mac apps and tools for developers
+            </div>
+            <div class="intro-tip"></div>
+            <div class="clear"></div>
         </div>
         <div id="content">
             {% for product in page.products %}
             {% if product.type contains "popular" %}
             <a class="qsproduct {{product.type}}" data-id="p{{forloop.index}}" href="{{product.url}}">
+                {% if product.badge %}
+                <div class="qsproduct-badge">{{product.badge}}</div>
+                {% endif %}
                 <img class="qsproduct-icon qsproduct-icon-{{product.title|downcase}}" src="/shared/img/icons/{{product.title|downcase}}-128.png" width="128" height="128" alt=" "/>
                 <div class="qsproduct-title">{{product.title}}</div>
                 <div class="qsproduct-desc">{{product.description}}</div>
@@ -171,7 +182,7 @@ products: [{
             <div class="clear"></div>
         </div>
         <div class="want-more" style="visibility:hidden">
-            And that's not all. <a href="javascript:giveMore()">Want more?</a>
+            <a href="javascript:giveMore()">Want more?</a>
         </div>
     </div>
 </div>
