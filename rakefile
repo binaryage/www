@@ -134,4 +134,20 @@ task :store do
     puts "Store template is in " + ZIP_PATH.green + ". Don't forget to upload it to FastSpring"
 end
 
+desc "generate 404.html and copy it to all subdomains"
+task :error404 do 
+    # build the site using jekyll
+    sys("rm -rf \"#{SITE_DIR}\"")
+    sys('jekyll')
+    
+    page = File.join(SITE_DIR, "404.html")
+    die("something went wrong, page #{page} does not exist") unless File.exists?(page)
+    
+    Dir.glob(File.join(ROOT_DIR, "..", "*")) do |path|
+        next unless File.directory?(path)
+        dir = File.expand_path(path)
+        sys("cp \"#{page}\" \"#{dir}\"")
+    end
+end
+
 task :default => :store
