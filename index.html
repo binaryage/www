@@ -153,11 +153,6 @@ products: [{
                 </ul>
             </li>
         </ul>
-        <div class="no-matches"  style="display:none;">
-            <div class="no-matches-arrow1"></div>
-            <div class="no-matches-arrow2"></div>
-            No matches, please try something else
-        </div>
         <div class="intro-text" style="height: 40px">
             <div class="intro-about"><a href="http://www.binaryage.com/about.html"><img src="http://www.gravatar.com/avatar/79322c2ed80c2d722de8c9d0475198a0?s=64" width="32" height="32" title="Antonin from BinaryAge" alt="Antonin from BinaryAge"></a></div>
             <div class="intro-1" style="display:none">
@@ -165,6 +160,11 @@ products: [{
             </div>
             <div class="intro-tip"></div>
             <div class="clear"></div>
+        </div>
+        <div class="no-matches"  style="display:none;">
+            <div class="no-matches-arrow1"></div>
+            <div class="no-matches-arrow2"></div>
+            No matches, please try something else
         </div>
         <div id="content">
             {% for product in page.products %}
