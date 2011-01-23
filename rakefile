@@ -138,6 +138,7 @@ desc "generate 404.html and copy it to all subdomains"
 task :error404 do 
     # build the site using jekyll
     sys("rm -rf \"#{SITE_DIR}\"")
+    sys("rm 404.html")
     sys('jekyll')
     
     page = File.join(SITE_DIR, "404.html")
