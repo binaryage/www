@@ -124,6 +124,9 @@ task :store do
     sys("rm \"#{STORE_TEMPLATE_WORKING_DIR_SHARED_IMG}/ffintro\"*")
     sys("rm \"#{STORE_TEMPLATE_WORKING_DIR_SHARED_IMG}/about-photo\"*")
     sys("rm \"#{STORE_TEMPLATE_WORKING_DIR_SHARED_IMG}/howto\"*")
+    sys("rm \"#{STORE_TEMPLATE_WORKING_DIR_SHARED_IMG}/nbair\"*")
+    sys("rm \"#{STORE_TEMPLATE_WORKING_DIR_SHARED_IMG}/matrix\"*")
+    sys("rm \"#{STORE_TEMPLATE_WORKING_DIR_SHARED_IMG}/chimp\"*")
     
     # zip it!
     sys("rm \"#{ZIP_PATH}\"") # clean!
