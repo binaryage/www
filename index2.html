@@ -1,0 +1,82 @@
+---
+layout: default2
+title: Mac applications and development tools from BinaryAge
+menu: products
+meta_title: Mac applications and development tools from BinaryAge
+meta_keywords: binaryage,antonin hildebrand,totalfinder,total commander,finder,visor,firequery,firelogger,firerainbow,xrefresh,drydrop,hashpage,productivity,mac,indie,software
+meta_description: BinaryAge = Mac applications and tools for developers.
+meta_image: /images/totalfinder-screenshot-tabs.png
+satisfaction: 1
+fbsdk: 1
+fblikefooter: 1
+ogmeta: {
+    site_name: "BinaryAge website",
+    description: "BinaryAge brings you innovative applications and developer tools.",
+    email: "support@binaryage.com",
+    type: "company",
+    title: "BinaryAge Software",
+    url: "http://www.binaryage.com",
+    image: "http://www.binaryage.com/shared/img/icons/binaryage-badge-256.png"
+}
+products: [{
+    title: "Visor",
+    url: "http://visor.binaryage.com",
+    description: "a system-wide terminal<br>accessible via a hot-key"
+},
+{
+    title: "FireQuery",
+    url: "http://firequery.binaryage.com",
+    description: "a Firebug extension<br>for jQuery development"
+},
+{
+    title: "FireRainbow",
+    url: "http://firerainbow.binaryage.com",
+    description: "a Firebug extension<br>for javascript syntax highlighting"
+},
+{
+    title: "FireLogger",
+    url: "http://firelogger.binaryage.com",
+    description: "a Firebug extension<br>which adds a sexy logger console"
+},
+{
+    title: "XRefresh",
+    url: "http://xrefresh.binaryage.com",
+    description: "a Firebug extension<br>for refresh-driven development"
+}]
+---
+
+<div id="main-offer">
+    <div class="container">
+        <a href="http://totalfinder.binaryage.com" class="main-box">
+            <div class="icon">
+                <div class="glow"></div>
+                <div class="face"></div>
+                <div class="star"></div>
+            </div>
+            <div class="texts">
+                <div class="title wf">TotalFinder</div>
+                <div class="subtitle wf">brings tabs to your native Finder and more!</div>
+            </div>
+        </a>
+        <div class="great-plugin"></div>
+    </div>
+</div>
+
+<div id="free-software">
+    <div class="container">
+        <div class="top-divider"></div>
+        <div class="products">
+            {% for product in page.products %}
+            <a class="product" href="{{product.url}}">
+                <img class="icon icon-{{product.title|downcase}}" src="/shared/img/icons/{{product.title|downcase}}-128.png" width="128" height="128" alt=" "/>
+                <div class="title wf">{{product.title}}</div>
+                <div class="desc wf">{{product.description}}</div>
+            </a>
+            {% endfor %}
+        </div>
+        <div class="bottom-divider"></div>
+        <a class="labs-button" href="/labs">
+            <div><div class="wf">More in Labs »</div></div>
+        </a>
+    </div>
+</div>
