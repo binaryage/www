@@ -1,10 +1,10 @@
 ---
-layout: default
-title: Mac applications and developer tools from BinaryAge
+layout: default2
+title: Mac applications and development tools from BinaryAge
 menu: products
 meta_title: Mac applications and development tools from BinaryAge
 meta_keywords: binaryage,antonin hildebrand,totalfinder,total commander,finder,visor,firequery,firelogger,firerainbow,xrefresh,drydrop,hashpage,productivity,mac,indie,software
-meta_description: BinaryAge - the creator of innovative Mac applications and tools for developers.
+meta_description: BinaryAge = Mac applications and tools for developers.
 meta_image: /images/totalfinder-screenshot-tabs.png
 satisfaction: 1
 fbsdk: 1
@@ -19,267 +19,64 @@ ogmeta: {
     image: "http://www.binaryage.com/shared/img/icons/binaryage-badge-256.png"
 }
 products: [{
-    title: "TotalFinder",
-    type: "app paid popular",
-    url: "http://totalfinder.binaryage.com",
-    description: "a Finder plugin<br>provides tabs and more!",
-    features: [
-        "Tabs like in Google Chrome",
-        "Dual panels mode",
-        "Visor window available system-wide on a hot-key",
-        "Keeps your Mac clean by redirecting .DS_Store files"
-    ]
-},
-{
     title: "Visor",
-    type: "app dev free popular",
     url: "http://visor.binaryage.com",
-    description: "a system-wide terminal<br>accessible via a hot-key",
-    features: [
-        "Terminal window available system-wide on a hot-key",
-        "Nice Terminal colors out of the box",
-        "Copy to clipboard on selection"
-    ]
+    description: "a system-wide terminal<br>accessible via a hot-key"
 },
 {
     title: "FireQuery",
-    type: "dev fb free popular",
     url: "http://firequery.binaryage.com",
-    description: "a Firebug extension<br>for jQuery development",
-    features: [
-        "Attached jQuery data are inlined in DOM Pane",
-        "jQuery objects in Firebug Console and DOM Panel",
-        "Elements in jQuery collections are highlighted on hover",
-        "jQuerify enables you to inject jQuery into any web page",
-        "jQuery Lint support"
-    ]
+    description: "a Firebug extension<br>for jQuery development"
 },
 {
     title: "FireRainbow",
-    type: "dev fb free",
     url: "http://firerainbow.binaryage.com",
-    description: "a Firebug extension<br>for javascript syntax highlighting",
-    features: [
-        "Highlights Javascript, HTML and CSS",
-        "Color theme can be modified using Firebug's CSS panel",
-        "Highlighting is applied incrementally (good performance)",
-        "Color themes available on GitHub"
-    ]
+    description: "a Firebug extension<br>for javascript syntax highlighting"
 },
 {
     title: "FireLogger",
-    type: "dev fb free",
     url: "http://firelogger.binaryage.com",
-    description: "a Firebug extension<br>which adds a sexy logger console",
-    features: [
-        "Rich-text logging (drill down object properties)",
-        "Exceptions and backtrace visualization",
-        "Profiling graphs",
-        "Open in Text Editor integration",
-        "Password protection for live sites"
-    ]
+    description: "a Firebug extension<br>which adds a sexy logger console"
 },
 {
     title: "XRefresh",
-    type: "dev win fb free",
     url: "http://xrefresh.binaryage.com",
-    description: "a Firebug extension<br>for refresh-driven development",
-    features: [
-        "Monitors multiple project folders",
-        "Performs refresh on file change",
-        "Soft Refresh for CSS and Javascript",
-        "You may specify exclude filters"
-    ]
-},
-{
-    title: "DryDrop",
-    type: "dev free",
-    url: "http://drydrop.binaryage.com",
-    description: "updates Google App Engine site<br>after pushing to GitHub",
-    features: [
-        "App Engine is robust and free*",
-        "No Python knowledge needed, just Git",
-        "Set it and forget it"
-    ]
+    description: "a Firebug extension<br>for refresh-driven development"
 }]
 ---
 
-<div id="qsproducts" style="display:none;">
-    {% for product in page.products %}
-    <a class="qsproduct {{product.type}}" data-id="p{{forloop.index}}" href="{{product.url}}">
-        {% if product.badge %}
-        <div class="qsproduct-badge">{{product.badge}}</div>
-        {% endif %}
-        <img class="qsproduct-icon qsproduct-icon-{{product.title|downcase}}" src="/shared/img/icons/{{product.title|downcase}}-128.png" width="128" height="128" alt=" "/>
-        <div class="qsproduct-title">{{product.title}}</div>
-        <div class="qsproduct-desc">{{product.description}}</div>
-    </a>
-    {% endfor %}
-</div>
 <div id="main-offer">
     <div class="container">
-        <ul class="splitter">
-            <li><div class="splitter-title">Software</div>
-                <ul class="segment">
-                    <li class="segment-1">
-                        <a data-value="app">for Mac Users</a>
-                    </li>
-                    <li class="segment-0">
-                        <a data-value="dev">for Web Developers</a>
-                    </li>
-                    <li class="segment-2 selected-1">
-                        <a data-value="all">for anyone</a>
-                    </li>
-                </ul>
-            </li>
-            <li class="splitter-second"><div class="splitter-title">which is</div>
-                <ul class="segment">
-                    <li class="segment-1 selected-1">
-                        <a data-value="popular">popular</a>
-                    </li>
-                    <li class="segment-0">
-                        <a data-value="paid">paid</a>
-                    </li>
-                    <li class="segment-0">
-                        <a data-value="free">open source</a>
-                    </li>
-                    <li class="segment-0">
-                        <a data-value="fb">for Firebug</a>
-                    </li>
-                    <li class="segment-2">
-                        <a id="which-is-anything" data-value="any">anything</a>
-                    </li>
-                </ul>
-            </li>
-        </ul>
-        <div class="intro-text" style="height: 40px">
-            <div class="intro-about"><a href="http://www.binaryage.com/about.html"><img src="http://www.gravatar.com/avatar/79322c2ed80c2d722de8c9d0475198a0?s=64" width="32" height="32" title="Antonin from BinaryAge" alt="Antonin from BinaryAge"></a></div>
-            <div class="intro-1" style="display:none">
-                Hi, I'm Antonin - an indie developer producing Mac apps and tools for developers
+        <a href="http://totalfinder.binaryage.com" class="main-box">
+            <div class="icon">
+                <div class="glow"></div>
+                <div class="face"></div>
+                <div class="star"></div>
             </div>
-            <div class="intro-tip"></div>
-            <div class="clear"></div>
-        </div>
-        <div class="no-matches"  style="display:none;">
-            <div class="no-matches-arrow1"></div>
-            <div class="no-matches-arrow2"></div>
-            No matches, please try something else
-        </div>
-        <div id="content">
-            {% for product in page.products %}
-            {% if product.type contains "popular" %}
-            <a class="qsproduct {{product.type}}" data-id="p{{forloop.index}}" href="{{product.url}}">
-                {% if product.badge %}
-                <div class="qsproduct-badge">{{product.badge}}</div>
-                {% endif %}
-                <img class="qsproduct-icon qsproduct-icon-{{product.title|downcase}}" src="/shared/img/icons/{{product.title|downcase}}-128.png" width="128" height="128" alt=" "/>
-                <div class="qsproduct-title">{{product.title}}</div>
-                <div class="qsproduct-desc">{{product.description}}</div>
-            </a>
-            {% endif %}
-            {% endfor %}
-            <div class="clear"></div>
-        </div>
-        <div class="want-more" style="visibility:hidden">
-            <a href="javascript:giveMore()">Want more?</a>
-        </div>
+            <div class="texts">
+                <div class="title wf">TotalFinder</div>
+                <div class="subtitle wf">brings tabs to your native Finder and more!</div>
+            </div>
+        </a>
+        <div class="great-plugin"></div>
     </div>
 </div>
 
-<script>
-function giveMore() {
-    $('.want-more').remove();
-    $('.intro-text').animate({opacity:0}, 400);
-    $('.splitter').addClass('activated');
-    setTimeout(function() {
-        $('#which-is-anything').trigger('click');
-    }, 1000);
-}
- 
-$(function() {
-    var read_button = function(class_names) {
-        var r = {
-            selected: false,
-            type: 0
-        };
-        for (var i = 0; i < class_names.length; i++) {
-            if (class_names[i].indexOf('selected-') == 0) {
-                r.selected = true;
-            }
-            if (class_names[i].indexOf('segment-') == 0) {
-                r.segment = class_names[i].split('-')[1];
-            }
-        };
-        return r;
-    };
-
-    var determineSelected = function($buttons) {
-        var $selected = $buttons.parent().filter('[class*="selected-"]');
-        return $selected.find('a').attr('data-value');
-    };
-
-    var $preferences = {
-        duration: 600,
-        easing: 'easeInOutCirc',
-        adjustHeight: 'auto'
-    };
-
-    var $list = $('#content');
-    var $data = $('#qsproducts');
-    var $controls = $('ul.splitter ul');
-
-    var lastFingerpring = "...";
-
-    var fingerprint = function(jq) {
-        var print = "";
-        for (var i=0; i < jq.length; i++) {
-            var item = jq.eq(i);
-            print += item.attr('data-id');
-        }
-        return print;
-    };
-
-    $controls.each(function(i) {
-
-        var $control = $(this);
-        var $buttons = $control.find('a');
-
-        $buttons.bind('click', function(e) {
-            var $button = $(this);
-            var $button_container = $button.parent();
-            var button_properties = read_button($button_container.attr('class').split(' '));
-            var selected = button_properties.selected;
-            var button_segment = button_properties.segment;
-
-            if (!selected) {
-                $buttons.parent().removeClass('selected-0').removeClass('selected-1').removeClass('selected-2');
-                $button_container.addClass('selected-' + button_segment);
-
-                var filter = determineSelected($controls.eq(0).find('a'));
-                var kind = determineSelected($controls.eq(1).find('a'));
-
-                var selector = "";
-                if (filter != 'all') {
-                    selector += "." + filter;
-                }
-                if (kind != 'any') {
-                    selector += "." + kind;
-                }
-                $filtered_data = $data.find('.qsproduct' + selector);
-                if (fingerprint($filtered_data)!=lastFingerpring) { // just optimization
-                    if ($filtered_data.length==0) {
-                        $('.no-matches').fadeIn();
-                    } else {
-                        $('.no-matches').fadeOut();
-                    }
-                    $list.quicksand($filtered_data, $preferences);
-                    lastFilteredData = fingerprint($filtered_data);
-                }
-            }
-
-            e.preventDefault();
-        });
-
-    });
-});
-</script>
+<div id="free-software">
+    <div class="container">
+        <div class="top-divider"></div>
+        <div class="products">
+            {% for product in page.products %}
+            <a class="product" href="{{product.url}}">
+                <img class="icon icon-{{product.title|downcase}}" src="/shared/img/icons/{{product.title|downcase}}-128.png" width="128" height="128" alt=" "/>
+                <div class="title wf">{{product.title}}</div>
+                <div class="desc wf">{{product.description}}</div>
+            </a>
+            {% endfor %}
+        </div>
+        <div class="bottom-divider"></div>
+        <a class="labs-button" href="/labs">
+            <div><div class="wf">More in Labs »</div></div>
+        </a>
+    </div>
+</div>
