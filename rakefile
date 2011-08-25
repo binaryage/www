@@ -8,6 +8,7 @@ STORE_TEMPLATE_WORKING_DIR = File.join(ROOT_DIR, '_storetemplate')
 STORE_TEMPLATE_WORKING_DIR_WINDOW = File.join(STORE_TEMPLATE_WORKING_DIR, 'window.xhtml')
 STORE_TEMPLATE_WORKING_DIR_SHARED = File.join(STORE_TEMPLATE_WORKING_DIR, 'shared')
 STORE_TEMPLATE_WORKING_DIR_SHARED_CSS = File.join(STORE_TEMPLATE_WORKING_DIR_SHARED, 'css')
+STORE_TEMPLATE_WORKING_DIR_SHARED_JS = File.join(STORE_TEMPLATE_WORKING_DIR_SHARED, 'js')
 STORE_TEMPLATE_WORKING_DIR_SHARED_IMG = File.join(STORE_TEMPLATE_WORKING_DIR_SHARED, 'img')
 STORE_TEMPLATE_WORKING_DIR_SHARED_CSS_SITE = File.join(STORE_TEMPLATE_WORKING_DIR_SHARED_CSS, 'site2.css')
 SITE_DIR = File.join(ROOT_DIR, '_site')
@@ -115,6 +116,7 @@ task :store do
     sys("rm \"#{STORE_TEMPLATE_WORKING_DIR_SHARED_CSS}/\"*.styl")
     sys("rm \"#{STORE_TEMPLATE_WORKING_DIR_SHARED_CSS}/\"site.css")
     sys("rm \"#{STORE_TEMPLATE_WORKING_DIR_SHARED_CSS}/\"syntax.css")
+    sys("rm \"#{STORE_TEMPLATE_WORKING_DIR_SHARED_IMG}/totalterminal-\"*")
     sys("rm \"#{STORE_TEMPLATE_WORKING_DIR_SHARED_IMG}/totalfinder-\"*")
     sys("rm \"#{STORE_TEMPLATE_WORKING_DIR_SHARED_IMG}/visor-\"*")
     sys("rm \"#{STORE_TEMPLATE_WORKING_DIR_SHARED_IMG}/firequery-\"*")
@@ -131,6 +133,7 @@ task :store do
     sys("rm \"#{STORE_TEMPLATE_WORKING_DIR_SHARED_IMG}/nbair\"*")
     sys("rm \"#{STORE_TEMPLATE_WORKING_DIR_SHARED_IMG}/matrix\"*")
     sys("rm \"#{STORE_TEMPLATE_WORKING_DIR_SHARED_IMG}/chimp\"*")
+    sys("rm \"#{STORE_TEMPLATE_WORKING_DIR_SHARED_JS}/code.js\"")
     
     # zip it!
     sys("rm \"#{ZIP_PATH}\"") # clean!
