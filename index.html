@@ -24,6 +24,11 @@ products: [{
     description: "a system-wide terminal<br>accessible via a hot-key"
 },
 {
+    title: "Asepsis",
+    url: "http://asepsis.binaryage.com",
+    description: "smart solution for<br>.DS_Store polution"
+},
+{
     title: "FireQuery",
     url: "http://firequery.binaryage.com",
     description: "a Firebug extension<br>for jQuery development"
@@ -39,10 +44,23 @@ products: [{
     description: "a Firebug extension<br>which adds a sexy logger console"
 },
 {
+},
+{
     title: "XRefresh",
     url: "http://xrefresh.binaryage.com",
     description: "a Firebug extension<br>for refresh-driven development"
-}]
+},
+{
+    title: "Restatic",
+    url: "http://restatic.binaryage.com",
+    description: "pumps spreadsheet data<br>to your static site"
+},
+{
+    title: "LeechGate",
+    url: "https://github.com/binaryage/leechgate",
+    description: "enables Google Analytics<br>for your Amazon S3 bucket"
+}
+]
 ---
 
 <div id="main-offer">
@@ -67,10 +85,12 @@ products: [{
         <div class="top-divider"></div>
         <div class="products">
             {% for product in page.products %}
-            <a class="product" href="{{product.url}}">
+            <a class="product" {% if product.url %}href="{{product.url}}"{% endif %}>
+				{% if product.title %}
                 <img class="icon icon-{{product.title|downcase}}" src="/shared/img/icons/{{product.title|downcase}}-128.png" width="128" height="128" alt=" "/>
                 <div class="title wf">{{product.title}}</div>
                 <div class="desc wf">{{product.description}}</div>
+				{% endif %}
             </a>
             {% endfor %}
         </div>
