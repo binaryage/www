@@ -4,6 +4,8 @@ require 'rake'
 # constants
 
 ROOT_DIR = File.expand_path('.')
+SHOEBOX_TEMPLATE_WORKING_DIR = File.join(ROOT_DIR, '_shoeboxtemplate')
+SHOEBOX_TEMPLATE_WORKING_DIR_SHARED = File.join(SHOEBOX_TEMPLATE_WORKING_DIR, 'shared')
 STORE_TEMPLATE_WORKING_DIR = File.join(ROOT_DIR, '_storetemplate')
 STORE_TEMPLATE_WORKING_DIR_WINDOW = File.join(STORE_TEMPLATE_WORKING_DIR, 'window.xhtml')
 STORE_TEMPLATE_WORKING_DIR_SHARED = File.join(STORE_TEMPLATE_WORKING_DIR, 'shared')
@@ -16,6 +18,7 @@ SITE_SHARED_DIR = File.join(SITE_DIR, 'shared')
 SITE_STORE_TEMPLATE = File.join(SITE_DIR, 'store-template.html')
 SITE_STORE_FAVICON = File.join(SITE_DIR, 'favicon.ico')
 SITE_STORE_ROBOTS = File.join(SITE_DIR, 'robots.txt')
+SITE_STORE_SHOEBOX_TEMPLATE = File.join(SITE_DIR, 'shoebox-template.html')
 ZIP_PATH = File.join(ROOT_DIR, 'store-template.zip')
 
 ################################################################################################
@@ -56,9 +59,74 @@ def patch(path, replacers)
   end
 end
 
+def prune_shared(dir)
+  img_dir = File.join(dir, 'img')
+  css_dir = File.join(dir, 'css')
+  js_dir = File.join(dir, 'js')
+  sys("rm -rf \"#{img_dir}/overlay\"")
+  sys("rm -rf \"#{img_dir}/scrollable\"")
+  sys("rm -rf \"#{img_dir}/tabs\"")
+  sys("rm -rf \"#{img_dir}/flags\"")
+  sys("rm -rf \"#{img_dir}/icons\"")
+  sys("rm -rf \"#{css_dir}/nib\"")
+  sys("rm \"#{css_dir}/\"*.styl")
+  sys("rm \"#{css_dir}/\"site.css")
+  sys("rm \"#{css_dir}/\"syntax.css")
+  sys("rm \"#{img_dir}/totalterminal-\"*")
+  sys("rm \"#{img_dir}/totalfinder-\"*")
+  sys("rm \"#{img_dir}/visor-\"*")
+  sys("rm \"#{img_dir}/firequery-\"*")
+  sys("rm \"#{img_dir}/drydrop-\"*")
+  sys("rm \"#{img_dir}/xrefresh-\"*")
+  sys("rm \"#{img_dir}/firelogger-\"*")
+  sys("rm \"#{img_dir}/firepython-\"*")
+  sys("rm \"#{img_dir}/firerainbow-\"*")
+  sys("rm \"#{img_dir}/firelogger4php-\"*")
+  sys("rm \"#{img_dir}/osx\"*")
+  sys("rm \"#{img_dir}/ffintro\"*")
+  sys("rm \"#{img_dir}/about-photo\"*")
+  sys("rm \"#{img_dir}/howto\"*")
+  sys("rm \"#{img_dir}/nbair\"*")
+  sys("rm \"#{img_dir}/matrix\"*")
+  sys("rm \"#{img_dir}/chimp\"*")
+  sys("rm \"#{js_dir}/code.js\"")
+end
+
 
 ################################################################################################
 # tasks
+
+desc "generate shoebox template into _shoeboxtemplate"
+task :shoebox do 
+    # build the site using jekyll
+    sys("rm -rf \"#{SITE_DIR}\"")
+    sys('jekyll')
+  
+    # copy interesting parts
+    sys("rm -rf \"#{SHOEBOX_TEMPLATE_WORKING_DIR}\"")
+    sys("mkdir -p \"#{SHOEBOX_TEMPLATE_WORKING_DIR}\"")
+    sys("cp -r \"#{SITE_SHARED_DIR}\" \"#{SHOEBOX_TEMPLATE_WORKING_DIR}\"")
+    sys("cp \"#{SITE_STORE_FAVICON}\" \"#{SHOEBOX_TEMPLATE_WORKING_DIR}\"")
+    sys("cp \"#{SITE_STORE_ROBOTS}\" \"#{SHOEBOX_TEMPLATE_WORKING_DIR}\"")
+    sys("cp \"#{SITE_STORE_SHOEBOX_TEMPLATE}\" \"#{SHOEBOX_TEMPLATE_WORKING_DIR}\"")
+
+    patch(File.join(SHOEBOX_TEMPLATE_WORKING_DIR, 'shoebox-template.html'), [
+        [/<body(.*?)>/, "<body\\1><div id=\"page-shoebox-template\">"],
+        ["</body>", "</div></body>"],
+        [/<link(.*?)([\/]{0,1})>/, "<link\\1/>"],
+        [/<img(.*?)([\/]{0,1})>/, "<img\\1/>"],
+        [/href="\/([^\/])/, "href=\"\\1"],
+        [/src="\/([^\/])/, "src=\"\\1"]
+    ])
+
+    # fix paths in CSS
+    patch(File.join(SHOEBOX_TEMPLATE_WORKING_DIR, 'shared', 'css', 'site2.css'), [
+        [/\/shared\//, "../"]
+    ])
+
+    # clean up shared folder to reduce size
+    prune_shared(SHOEBOX_TEMPLATE_WORKING_DIR_SHARED)
+end
 
 desc "generate store template zip" # see https://springboard.fastspring.com/site/configuration/template/doc/templateOverview.xml
 task :store do 
@@ -107,33 +175,7 @@ task :store do
     ])
     
     # clean up shared folder to reduce size
-    sys("rm -rf \"#{STORE_TEMPLATE_WORKING_DIR_SHARED_IMG}/overlay\"")
-    sys("rm -rf \"#{STORE_TEMPLATE_WORKING_DIR_SHARED_IMG}/scrollable\"")
-    sys("rm -rf \"#{STORE_TEMPLATE_WORKING_DIR_SHARED_IMG}/tabs\"")
-    sys("rm -rf \"#{STORE_TEMPLATE_WORKING_DIR_SHARED_IMG}/flags\"")
-    sys("rm -rf \"#{STORE_TEMPLATE_WORKING_DIR_SHARED_IMG}/icons\"")
-    sys("rm -rf \"#{STORE_TEMPLATE_WORKING_DIR_SHARED_CSS}/nib\"")
-    sys("rm \"#{STORE_TEMPLATE_WORKING_DIR_SHARED_CSS}/\"*.styl")
-    sys("rm \"#{STORE_TEMPLATE_WORKING_DIR_SHARED_CSS}/\"site.css")
-    sys("rm \"#{STORE_TEMPLATE_WORKING_DIR_SHARED_CSS}/\"syntax.css")
-    sys("rm \"#{STORE_TEMPLATE_WORKING_DIR_SHARED_IMG}/totalterminal-\"*")
-    sys("rm \"#{STORE_TEMPLATE_WORKING_DIR_SHARED_IMG}/totalfinder-\"*")
-    sys("rm \"#{STORE_TEMPLATE_WORKING_DIR_SHARED_IMG}/visor-\"*")
-    sys("rm \"#{STORE_TEMPLATE_WORKING_DIR_SHARED_IMG}/firequery-\"*")
-    sys("rm \"#{STORE_TEMPLATE_WORKING_DIR_SHARED_IMG}/drydrop-\"*")
-    sys("rm \"#{STORE_TEMPLATE_WORKING_DIR_SHARED_IMG}/xrefresh-\"*")
-    sys("rm \"#{STORE_TEMPLATE_WORKING_DIR_SHARED_IMG}/firelogger-\"*")
-    sys("rm \"#{STORE_TEMPLATE_WORKING_DIR_SHARED_IMG}/firepython-\"*")
-    sys("rm \"#{STORE_TEMPLATE_WORKING_DIR_SHARED_IMG}/firerainbow-\"*")
-    sys("rm \"#{STORE_TEMPLATE_WORKING_DIR_SHARED_IMG}/firelogger4php-\"*")
-    sys("rm \"#{STORE_TEMPLATE_WORKING_DIR_SHARED_IMG}/osx\"*")
-    sys("rm \"#{STORE_TEMPLATE_WORKING_DIR_SHARED_IMG}/ffintro\"*")
-    sys("rm \"#{STORE_TEMPLATE_WORKING_DIR_SHARED_IMG}/about-photo\"*")
-    sys("rm \"#{STORE_TEMPLATE_WORKING_DIR_SHARED_IMG}/howto\"*")
-    sys("rm \"#{STORE_TEMPLATE_WORKING_DIR_SHARED_IMG}/nbair\"*")
-    sys("rm \"#{STORE_TEMPLATE_WORKING_DIR_SHARED_IMG}/matrix\"*")
-    sys("rm \"#{STORE_TEMPLATE_WORKING_DIR_SHARED_IMG}/chimp\"*")
-    sys("rm \"#{STORE_TEMPLATE_WORKING_DIR_SHARED_JS}/code.js\"")
+    prune_shared(STORE_TEMPLATE_WORKING_DIR_SHARED)
     
     # zip it!
     sys("rm \"#{ZIP_PATH}\"") # clean!
