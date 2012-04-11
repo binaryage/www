@@ -113,10 +113,10 @@ task :shoebox do
     patch(File.join(SHOEBOX_TEMPLATE_WORKING_DIR, 'shoebox-template.html'), [
         [/<body(.*?)>/, "<body\\1><div id=\"page-shoebox-template\">"],
         ["</body>", "</div></body>"],
-        [/<link(.*?)([\/]{0,1})>/, "<link\\1/>"],
-        [/<img(.*?)([\/]{0,1})>/, "<img\\1/>"],
-        [/href="\/([^\/])/, "href=\"\\1"],
-        [/src="\/([^\/])/, "src=\"\\1"]
+        # [/<link(.*?)([\/]{0,1})>/, "<link\\1/>"],
+        # [/<img(.*?)([\/]{0,1})>/, "<img\\1/>"],
+        # [/href="\/([^\/])/, "href=\"\\1"],
+        # [/src="\/([^\/])/, "src=\"\\1"]
     ])
 
     # fix paths in CSS
