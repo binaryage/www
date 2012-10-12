@@ -16,7 +16,7 @@ ogmeta: {
     type: "company",
     title: "BinaryAge Software",
     url: "http://www.binaryage.com",
-    image: "http://www.binaryage.com/shared/img/icons/binaryage-badge-256.png"
+    image: "http://www.binaryage.com/base/img/icons/binaryage-badge-256.png"
 }
 products: [{
     title: "TotalTerminal",
@@ -97,7 +97,7 @@ products: [{
             {% for product in page.products %}
             <a class="product" {% if product.url %}href="{{product.url}}"{% endif %}>
                 {% if product.title %}
-                <img class="icon icon-{{product.title|downcase}}" src="/shared/img/icons/{{product.title|downcase}}-128.png" width="128" height="128" alt=" "/>
+                <img class="icon icon-{{product.title|downcase}}" src="/base/img/icons/{{product.title|downcase}}-128.png" width="128" height="128" alt=" "/>
                 <div class="title wf">{{product.title}}</div>
                 <div class="desc wf">{{product.description}}</div>
                 {% endif %}
