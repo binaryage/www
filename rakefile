@@ -12,7 +12,7 @@ STORE_TEMPLATE_WORKING_DIR_SHARED = File.join(STORE_TEMPLATE_WORKING_DIR, 'share
 STORE_TEMPLATE_WORKING_DIR_SHARED_CSS = File.join(STORE_TEMPLATE_WORKING_DIR_SHARED, 'css')
 STORE_TEMPLATE_WORKING_DIR_SHARED_JS = File.join(STORE_TEMPLATE_WORKING_DIR_SHARED, 'js')
 STORE_TEMPLATE_WORKING_DIR_SHARED_IMG = File.join(STORE_TEMPLATE_WORKING_DIR_SHARED, 'img')
-STORE_TEMPLATE_WORKING_DIR_SHARED_CSS_SITE = File.join(STORE_TEMPLATE_WORKING_DIR_SHARED_CSS, 'site2.css')
+STORE_TEMPLATE_WORKING_DIR_SHARED_CSS_SITE = File.join(STORE_TEMPLATE_WORKING_DIR_SHARED_CSS, 'site.css')
 SITE_DIR = File.join(ROOT_DIR, '_site')
 SITE_SHARED_DIR = File.join(SITE_DIR, 'shared')
 SITE_STORE_TEMPLATE = File.join(SITE_DIR, 'store-template.html')
@@ -124,7 +124,7 @@ task :shoebox do
     ])
 
     # fix paths in CSS
-    patch(File.join(SHOEBOX_TEMPLATE_WORKING_DIR, 'shared', 'css', 'site2.css'), [
+    patch(File.join(SHOEBOX_TEMPLATE_WORKING_DIR, 'shared', 'css', 'site.css'), [
         [/\/shared\//, "../"]
     ])
 
