@@ -17,28 +17,19 @@ ogmeta: {
   image: "http://www.binaryage.com/shared/img/icons/binaryage-badge-256.png"
 }
 products: [{
-    title: "TotalTerminal",
-    url: "http://totalterminal.binaryage.com",
-    description: "a system-wide terminal<br>accessible via a hot-key",
+    title: "XRefresh",
+    url: "http://xrefresh.binaryage.com",
+    description: "a Firebug extension<br>for refresh-driven development"
+},
+{
+    title: "Restatic",
+    url: "http://restatic.binaryage.com",
+    description: "pumps spreadsheet data<br>to your static site"
+},{
+    title: "Visor",
+    url: "http://visor.binaryage.com",
+    description: "a system-wide terminal<br>obsoleted by TotalTerminal",
     tech: "apple"
-},
-{
-    title: "FireQuery",
-    url: "http://firequery.binaryage.com",
-    description: "a Firebug extension<br>for jQuery development",
-    tech: "html5"
-},
-{
-    title: "FireRainbow",
-    url: "http://firerainbow.binaryage.com",
-    description: "a Firebug extension<br>for javascript syntax highlighting",
-    tech: "html5"
-},
-{
-    title: "FireLogger",
-    url: "http://firelogger.binaryage.com",
-    description: "a Firebug extension<br>which adds a sexy logger console",
-    tech: "html5"
 }]
 ---
 
@@ -46,32 +37,9 @@ products: [{
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <div class="page-icon" title="binaryage software">
-          <i class="fa fa-star"></i> products
+        <div class="page-icon" title="obsolete software">
+          <i class="fa fa-trash-o"></i> obsolete
         </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div id="commercial-software">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-5 col-md-offset-1">
-        <a href="http://totalfinder.binaryage.com" class="icon-box totalfinder">
-          <img class="face" src="/shared/img/icons/totalfinder-512.png">
-          <span class="title">TotalFinder</span>
-          <span class="subtitle">brings tabs and more to your Finder</span>
-          <span class="tech"><i class="fa fa-apple"></i></span>
-        </a>
-      </div>
-      <div class="col-md-5">
-        <a href="http://totalspaces.binaryage.com" class="icon-box totalspaces2">
-          <img class="face apple" src="/shared/img/icons/totalspaces-512.png">
-          <span class="title">TotalSpaces2</span>
-          <span class="subtitle">the ultimate grid spaces manager for your Mac</span>
-          <span class="tech"><i class="fa fa-apple"></i></span>
-        </a>
       </div>
     </div>
   </div>
@@ -83,7 +51,6 @@ products: [{
       <div class="col-md-12">
         <div class="products-wrapper">
           <div class="products">
-            <div class="generic-separator"></div>
             {% for product in page.products %}
             <a class="product" {% if product.url %}href="{{product.url}}"{% endif %}>
               {% if product.title %}
@@ -109,7 +76,7 @@ products: [{
           <div class="more-box">
             <div class="generic-separator"></div>
             <div class="more-extension">
-              <a href="/labs"><i class="fa fa-flask"></i> we have more software in the labs...</a>
+              <a href="/labs"><i class="fa fa-flask"></i> Looking for our software in the labs?</a>
             </div>
           </div>
         </div>
