@@ -3,29 +3,23 @@ layout: default
 title: Mac applications and development tools from BinaryAge
 menu: products
 meta_title: Mac applications and development tools from BinaryAge
-meta_keywords: binaryage,antonin hildebrand,totalfinder,total commander,finder,visor,firequery,firelogger,firerainbow,xrefresh,drydrop,hashpage,productivity,mac,indie,software
-meta_description: BinaryAge = Mac applications and tools for developers.
+meta_keywords: binaryage,totalfinder,totalspaces,totalterminal,total commander,finder,spaces,visor,firequery,firelogger,firerainbow,xrefresh,drydrop,productivity,mac,indie,software
+meta_description: BinaryAge - Mac applications and tools for developers.
 meta_image: /images/totalfinder-screenshot-tabs.png
 fbsdk: 1
-fblikefooter: 1
 ogmeta: {
-    site_name: "BinaryAge website",
-    description: "BinaryAge brings you innovative applications and developer tools.",
-    email: "support@binaryage.com",
-    type: "company",
-    title: "BinaryAge Software",
-    url: "http://www.binaryage.com",
-    image: "http://www.binaryage.com/shared/img/icons/binaryage-badge-256.png"
+  site_name: "BinaryAge website",
+  description: "BinaryAge brings you innovative applications and developer tools.",
+  email: "support@binaryage.com",
+  type: "company",
+  title: "BinaryAge Software",
+  url: "http://www.binaryage.com",
+  image: "http://www.binaryage.com/shared/img/icons/binaryage-badge-256.png"
 }
 products: [{
     title: "TotalTerminal",
     url: "http://totalterminal.binaryage.com",
     description: "a system-wide terminal<br>accessible via a hot-key"
-},
-{
-    title: "Asepsis",
-    url: "http://asepsis.binaryage.com",
-    description: "a smart solution for<br>.DS_Store pollution"
 },
 {
     title: "FireQuery",
@@ -41,71 +35,66 @@ products: [{
     title: "FireLogger",
     url: "http://firelogger.binaryage.com",
     description: "a Firebug extension<br>which adds a sexy logger console"
-},
-{
-},
-{
-    title: "XRefresh",
-    url: "http://xrefresh.binaryage.com",
-    description: "a Firebug extension<br>for refresh-driven development"
-},
-{
-    title: "Restatic",
-    url: "http://restatic.binaryage.com",
-    description: "pumps spreadsheet data<br>to your static site"
-},
-{
-    title: "LeechGate",
-    url: "https://github.com/binaryage/leechgate",
-    description: "enables Google Analytics<br>for your Amazon S3 bucket"
-}
-]
+}]
 ---
 
-<div id="main-offer">
-    <div class="container">
-        <div class="main-box-wrapper">
-            <a href="http://totalfinder.binaryage.com" class="main-box totalfinder">
-                <div class="icon">
-                    <div class="glow"></div>
-                    <div class="face"></div>
-                </div>
-                <div class="texts">
-                    <div class="title wf">TotalFinder</div>
-                    <div class="subtitle wf">brings tabs to your native Finder and more!</div>
-                </div>
-            </a>
-            <a href="http://totalspaces.binaryage.com" class="main-box totalspaces2">
-                <div class="icon">
-                    <div class="glow"></div>
-                    <div class="face"></div>
-                </div>
-                <div class="texts">
-                    <div class="title wf">TotalSpaces2</div>
-                    <div class="subtitle wf">the ultimate grid spaces manager for your Mac</div>
-                </div>
-            </a>
-        </div>
+<div id="commercial-software">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-5 col-md-offset-1">
+        <a href="http://totalfinder.binaryage.com" class="icon-box totalfinder">
+          <img class="face" src="/shared/img/icons/totalfinder-512.png">
+          <div class="title">TotalFinder</div>
+          <div class="subtitle">brings tabs and more to your Finder</div>
+        </a>
+      </div>
+      <div class="col-md-5">
+        <a href="http://totalspaces.binaryage.com" class="icon-box totalspaces2">
+          <img class="face" src="/shared/img/icons/totalspaces-512.png">
+          <div class="title">TotalSpaces2</div>
+          <div class="subtitle">the ultimate grid spaces manager for your Mac</div>
+        </a>
+      </div>
     </div>
+  </div>
 </div>
 
 <div id="free-software">
-    <div class="container">
-        <div class="top-divider"></div>
-        <div class="products">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="products-wrapper">
+          <div class="products">
+            <div class="generic-separator"></div>
             {% for product in page.products %}
             <a class="product" {% if product.url %}href="{{product.url}}"{% endif %}>
-                {% if product.title %}
-                <img class="icon icon-{{product.title|downcase}}" src="/shared/img/icons/{{product.title|downcase}}-128.png" width="128" height="128" alt=" "/>
-                <div class="title wf">{{product.title}}</div>
-                <div class="desc wf">{{product.description}}</div>
-                {% endif %}
+              {% if product.title %}
+              <img class="icon icon-{{product.title|downcase}}" src="/shared/img/icons/{{product.title|downcase}}-256.png" width="128" height="128" alt=" "/>
+              <div class="title">{{product.title}}</div>
+              <div class="desc">{{product.description}}</div>
+              {% endif %}
             </a>
             {% endfor %}
+          </div>
         </div>
-        <div class="bottom-divider"></div>
-        <a class="labs-button" href="/labs">
-            <div><div class="wf">More in Labs »</div></div>
-        </a>
+      </div>
     </div>
+  </div>
+</div>
+
+<div id="more-software">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="more-wrapper">
+          <div class="more-box">
+            <div class="generic-separator"></div>
+            <div class="more-extension">
+              <a href="/labs">And we have more software in the labs <i class="fa fa-flask"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
