@@ -3,7 +3,6 @@ id: store
 layout: default
 title: BinaryAge Store
 menu: store
-fblikefooter: 1
 products: [{
   title: "TotalFinder",
   description: "TotalFinder brings tabs to your native Finder and more!",
@@ -37,41 +36,40 @@ products: [{
 ---
 
 <div id="main">
-  <div class="wf">
-    <div id="main-store" class="wf">
-      <div class="container">
-        <div class="store-box">
-          <div class="store-header">
-            <div class="store-header-icon"></div>
-            <div class="store-header-title">
-              Store
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+	<div id="main-store">
+	  <div class="store-box">
+	    <div class="store-header">
+	      <span class="store-header-title"><i class="fa fa-shopping-cart"></i> Store</span>
             </div>
-          </div>
-          <div class="core-window">
-                  {% for product in page.products %}
-            <div class="product-row {{product.klass}}">
-              <div class="product-image">
-                <img src="{{product.img}}" alt="">
+	    <div class="core-window">
+	      {% for product in page.products %}
+	      <div class="product-row {{product.klass}}">
+		<div class="product-image">
+		  <img src="{{product.img}}" alt="">
+                </div>
+		<div class="product-info">
+		  <div class="product-title">
+		    {{product.title}}
+		  </div>
+		  <div class="product-description">
+		    {{product.description}}
+		  </div>
+                </div>
+		<div class="product-actions">
+		  <div class="product-price">
+		    <span class="store-product-price"><span class="store-value-money store-value-money-single">{{product.price}}</span></span>
+		  </div>
+		  <div class="product-buy">
+		    <span class="store-action core-js-enabled-inline store-product-detail-action-order"><a class="store-action-command" href="{{product.url}}"><span class="store-action-title">Order Now</span></a></span><span class="core-js-disabled-inline store-product-detail-action-order"></span>
+		  </div>
+                </div>
+		<div class="clear"></div>
               </div>
-              <div class="product-info">
-                <div class="product-title">
-                  {{product.title}}
-                </div>
-                <div class="product-description">
-                  {{product.description}}
-                </div>
-              </div>
-              <div class="product-actions">
-                <div class="product-price">
-                  <span class="store-product-price"><span class="store-value-money store-value-money-single">{{product.price}}</span></span>
-                </div>
-                <div class="product-buy">
-                  <span class="store-action core-js-enabled-inline store-product-detail-action-order"><a class="store-action-command" href="{{product.url}}"><span class="store-action-title">Order Now</span></a></span><span class="core-js-disabled-inline store-product-detail-action-order"></span>
-                </div>
-              </div>
-              <div class="clear"></div>
+	      {% endfor %}
             </div>
-            {% endfor %}
           </div>
         </div>
       </div>
