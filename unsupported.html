@@ -6,6 +6,7 @@ meta_title: Mac applications and development tools from BinaryAge
 meta_keywords: binaryage,totalfinder,totalspaces,totalterminal,total commander,finder,spaces,visor,firequery,firelogger,firerainbow,xrefresh,drydrop,productivity,mac,indie,software
 meta_description: BinaryAge - Mac applications and tools for developers.
 meta_image: /images/totalfinder-screenshot-tabs.png
+fbsdk: 1
 ogmeta: {
   site_name: "BinaryAge website",
   description: "BinaryAge brings you innovative applications and developer tools.",
@@ -16,35 +17,47 @@ ogmeta: {
   image: "http://www.binaryage.com/shared/img/icons/binaryage-badge-256.png"
 }
 products: [{
-    title: "TotalTerminal",
-    url: "http://totalterminal.binaryage.com",
-    description: "a system-wide terminal<br>accessible via a hot-key",
+    title: "XRefresh",
+    url: "http://xrefresh.binaryage.com",
+    description: "a Firebug extension<br>for refresh-driven development"
+},{
+    title: "Restatic",
+    url: "http://restatic.binaryage.com",
+    description: "pumps spreadsheet data<br>to your static site"
+},{
+    title: "Visor",
+    url: "http://visor.binaryage.com",
+    description: "a system-wide terminal<br>obsoleted by TotalTerminal",
     tech: "apple"
 },{
-    title: "Asepsis",
-    url: "http://asepsis.binaryage.com",
-    description: "a smart solution for<br>.DS_Store pollution"
+    title: "FireQuery",
+    url: "http://firequery.binaryage.com",
+    description: "a Firebug extension<br>for jQuery development",
+    tech: "html5"
+},{
+    title: "FireRainbow",
+    url: "http://firerainbow.binaryage.com",
+    description: "a Firebug extension<br>for javascript syntax highlighting",
+    tech: "html5"
+},{
+    title: "FireLogger",
+    url: "http://firelogger.binaryage.com",
+    description: "a Firebug extension<br>which adds a sexy logger console",
+    tech: "html5"
+},{
+    title: "LeechGate",
+    url: "https://github.com/binaryage/leechgate",
+    description: "enables Google Analytics<br>for your Amazon S3 bucket"
 }]
 ---
 
-<div id="commercial-software">
+<div id="welcome">
   <div class="container">
     <div class="row">
-      <div class="col-md-5 col-md-offset-1">
-        <a href="http://totalfinder.binaryage.com" class="icon-box totalfinder">
-          <img class="face" src="/shared/img/icons/totalfinder-512.png">
-          <span class="title">TotalFinder</span>
-          <span class="subtitle">brings tabs and more to your Finder</span>
-          <span class="tech"><i class="fa fa-apple"></i></span>
-        </a>
-      </div>
-      <div class="col-md-5">
-        <a href="http://totalspaces.binaryage.com" class="icon-box totalspaces2">
-          <img class="face apple" src="/shared/img/icons/totalspaces2-512.png">
-          <span class="title">TotalSpaces2</span>
-          <span class="subtitle">the ultimate grid spaces manager for your Mac</span>
-          <span class="tech"><i class="fa fa-apple"></i></span>
-        </a>
+      <div class="col-md-12">
+        <div class="page-icon" title="obsolete software">
+          <i class="fa fa-warning"></i> unsupported
+        </div>
       </div>
     </div>
   </div>
@@ -56,7 +69,6 @@ products: [{
       <div class="col-md-12">
         <div class="products-wrapper">
           <div class="products">
-            <div class="generic-separator"></div>
             {% for product in page.products %}
             <a class="product" {% if product.url %}href="{{product.url}}"{% endif %}>
               {% if product.title %}
@@ -82,7 +94,7 @@ products: [{
           <div class="more-box">
             <div class="generic-separator"></div>
             <div class="more-extension">
-              <a href="/unsupported"><i class="fa fa-warning"></i>Looking for unsupported software?</a>
+              <a href="/"><i class="fa fa-star"></i>Check out our supported software on the homepage</a>
             </div>
           </div>
         </div>
