@@ -7407,6 +7407,8 @@ html{height:101%}
 body{background:#f2f2f2 url("http://static.binaryage.com/6a7eac91_shared_img2_background.png") repeat top left;font:12px 'Play',arial,serif}
 a{color:#4f6393;text-decoration:none;-webkit-transition:color 0.5s ease 0s;-moz-transition:color 0.5s ease 0s;-o-transition:color 0.5s ease 0s;-ms-transition:color 0.5s ease 0s;transition:color 0.5s ease 0s}
 a:hover,a:focus{color:#0f56b3 !important}
+a.red{color:#c00;text-decoration:none;-webkit-transition:color 0.5s ease 0s;-moz-transition:color 0.5s ease 0s;-o-transition:color 0.5s ease 0s;-ms-transition:color 0.5s ease 0s;transition:color 0.5s ease 0s}
+a.red:hover,a.red:focus{color:#f00 !important}
 .container{position:relative;}
 li{line-height:18px}
 h1,h2,h3,h4,h5,h6{margin-top:30px;margin-bottom:10px}
@@ -7417,6 +7419,7 @@ h5,h6{margin-top:6px;font-size:14px}
 p{font-size:13px;line-height:18px}
 blockquote{font-size:13px;margin-left:10px}
 .generic-separator{height:1px;-webkit-box-shadow:rgba(255,255,255,0.75) 0 1px 1px;box-shadow:rgba(255,255,255,0.75) 0 1px 1px;background-color:#ddd}
+hr{margin-top:20px;margin-bottom:20px;border:0;border-top:1px solid #ddd}
 .binaryage-logo{position:absolute;margin-top:6px;opacity:.2;-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";filter:alpha(opacity=20);-webkit-transition:opacity 0.5s ease 0s;-moz-transition:opacity 0.5s ease 0s;-o-transition:opacity 0.5s ease 0s;-ms-transition:opacity 0.5s ease 0s;transition:opacity 0.5s ease 0s;-webkit-transform:scale(.6);-moz-transform:scale(.6);-o-transform:scale(.6);-ms-transform:scale(.6);transform:scale(.6);-webkit-transform-origin:0 0;-moz-transform-origin:0 0;-o-transform-origin:0 0;-ms-transform-origin:0 0;transform-origin:0 0;}
 .binaryage-logo .logo{width:260px;height:56px;fill-rule:evenodd;}
 .binaryage-logo .logo .logo-badge{stroke-width:1;}
@@ -7550,6 +7553,9 @@ blockquote{font-size:13px;margin-left:10px}
 .product-header .product-buttons .button-container{float:right;margin-top:14px;margin-left:20px;}
 .product-header .product-buttons .button-container .button-note{padding-right:10px;position:relative;top:-2px;text-align:right;text-shadow:#fff 0 1px 1px;font-size:10px;line-height:14px;}
 .product-header .product-buttons .button-container .button-note a{color:#888}
+.product-header .product-buttons .button-container .button-note .exclamation{display:inline-block;color:#fff;background-color:#f00;-webkit-border-radius:2px;border-radius:2px;padding:0 4px;text-shadow:none;}
+.product-header .product-buttons .button-container .button-note .exclamation a{color:#fff;text-decoration:underline;text-shadow:none;}
+.product-header .product-buttons .button-container .button-note .exclamation a:hover{color:#ff0 !important}
 .product-header .product-buttons .button-container .button{margin:0;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;display:inline-block;text-decoration:none;position:relative;cursor:pointer;font:bold 20px 'Play',arial,serif;color:#8d9198;border:1px solid #ccc;padding:2px 14px;text-shadow:#fff 0 1px 1px;text-align:left;-webkit-border-radius:8px;border-radius:8px;min-height:38px;line-height:38px;margin-bottom:12px;-webkit-box-shadow:0 1px 4px #ccc;box-shadow:0 1px 4px #ccc;background-color:#fff;background:-webkit-linear-gradient(top, #fff, #f4f4f4);background:-moz-linear-gradient(top, #fff, #f4f4f4);background:-o-linear-gradient(top, #fff, #f4f4f4);background:-ms-linear-gradient(top, #fff, #f4f4f4);background:linear-gradient(to bottom, #fff, #f4f4f4);white-space:nowrap;-webkit-transition:all 0.5s ease 0s;-moz-transition:all 0.5s ease 0s;-o-transition:all 0.5s ease 0s;-ms-transition:all 0.5s ease 0s;transition:all 0.5s ease 0s;}
 .product-header .product-buttons .button-container .button:hover{background-color:#f3f3f3;background:-webkit-linear-gradient(top, #fff, #f8f8f8);background:-moz-linear-gradient(top, #fff, #f8f8f8);background:-o-linear-gradient(top, #fff, #f8f8f8);background:-ms-linear-gradient(top, #fff, #f8f8f8);background:linear-gradient(to bottom, #fff, #f8f8f8);border-color:#0f56b3}
 .product-header .product-buttons .button-container .button i{-webkit-transition:all 0.5s ease 0s;-moz-transition:all 0.5s ease 0s;-o-transition:all 0.5s ease 0s;-ms-transition:all 0.5s ease 0s;transition:all 0.5s ease 0s;margin-right:10px}
