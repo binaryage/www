@@ -1,0 +1,34 @@
+---
+id: store
+layout: default
+title: BinaryAge Store
+menu: store
+fastspring: 1
+---
+
+<script>
+(function () {
+  // work around https://github.com/binaryage/deals/issues/17
+  var l = document.location+"";
+  if (l.match(/instant\/totalfinder(|\?.*)$/)) {
+    window.location = "https://sites.fastspring.com/binaryage-store/instant/totalfinder";
+  }
+})();
+</script>
+
+<div id="main-store" class="wf">
+    <div class="container">
+        <div class="store-box">
+            <div class="store-header">
+                <div class="store-header-title">
+                    <i class="fa fa-shopping-cart"></i>&nbsp;Store
+                </div>
+            </div>
+            ##INSERT STORE CONTENT HERE##
+        </div>
+        <div class="store-security">
+        <!-- TemplateBeginEditable name="SecurityTransparent" -->
+        <!-- TemplateEndEditable -->
+        </div>
+    </div>
+</div>
