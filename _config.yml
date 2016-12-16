@@ -1,0 +1,4 @@
+---
+prune_files:
+- "store-redirect.html"
+- "store-template.html"
