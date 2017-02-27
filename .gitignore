@@ -7,3 +7,4 @@ store-instant.html
 store-cc.html
 store-order.html
 .jekyll*
+.sass-cache
