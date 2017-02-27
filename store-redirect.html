@@ -8,10 +8,18 @@ fastspring: 1
 
 <script>
 (function () {
-  // work around https://github.com/binaryage/deals/issues/17
+  // historical notes: https://github.com/binaryage/deals/issues/17
+  
+  // we want to redirect https://sites.fastspring.com/binaryage-store/instant/totalfinder
   var l = document.location+"";
-  if (l.match(/instant\/totalfinder(|\?.*)$/)) {
-    window.location = "https://sites.fastspring.com/binaryage-store/instant/totalfinder";
+  if (l.match(/binaryage-store\/instant\/totalfinder(|\?.*)$/)) {
+    window.location = "https://sites.fastspring.com/binaryage/instant/totalfinder";
+  } else if (l.match(/binaryage-store\/instant\/totalspaces(|\?.*)$/)) {
+    // we want to redirect https://sites.fastspring.com/binaryage-store/instant/totalspaces
+    window.location = "https://sites.fastspring.com/binaryage/instant/totalspaces2";
+  } else {
+    // we want to redirect other cases
+    window.location = "https://sites.fastspring.com/binaryage/product/store";
   }
 })();
 </script>
@@ -20,9 +28,7 @@ fastspring: 1
     <div class="container">
         <div class="store-box">
             <div class="store-header">
-                <div class="store-header-title">
-                    <i class="fa fa-shopping-cart"></i>&nbsp;Store
-                </div>
+                <div class="store-header-title">BinaryAge Store</div>
             </div>
             ##INSERT STORE CONTENT HERE##
         </div>
